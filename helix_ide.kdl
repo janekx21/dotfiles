@@ -1,0 +1,27 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+        }
+        children
+        // pane size=1 borderless=true {
+        //     plugin location="zellij:status-bar"
+        // }
+    }
+
+    tab name="helix" focus=true {
+        pane command="hx" {
+            args "."
+        }
+    }
+    tab name="lazygit" {
+        pane command="lazygit"
+    }
+    tab name="lazydocker" {
+        pane command="lazydocker"
+    }
+    tab name="joshuto" {
+        pane command="joshuto"
+    }
+    tab name="terminal"
+}
