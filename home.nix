@@ -332,11 +332,12 @@
       ];
       shellAliases = {
         ll = "ls -l";
-        update = "home-manager switch";
-        change = "hx ~/.config/home-manager/home.nix";
+        edit = "~/Git/dotfiles/edit.sh";
         dc = "docker-compose";
         ld = "lazydocker";
         lg = "lazygit";
+        cd = "z";
+        ".." = "z ..";
       };
       envExtra = "bindkey \"^[[3~\" delete-char";
     };
