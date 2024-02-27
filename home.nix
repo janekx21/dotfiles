@@ -338,7 +338,7 @@
       ];
       shellAliases = {
         ll = "ls -l";
-        edit = "pushd ~/Git/dotfiles && ./edit.sh";
+        edit = "{pushd ~/Git/dotfiles; ./edit.sh; popd;}";
         dc = "docker-compose";
         ld = "lazydocker";
         lg = "lazygit";
