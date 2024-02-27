@@ -112,6 +112,8 @@
       # gnomeExtensions.thanatophobia
       # gnomeExtensions.user-themes
       
+      # Virtualization
+      docker
       # VIRTUALBOX
       # linuxKernel.packages.linux_6_2.virtualbox
   ];
