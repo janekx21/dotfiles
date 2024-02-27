@@ -152,6 +152,7 @@
     # '';
   };
 
+  # this does not exsist
   # users.users.janek = {
   #   shell = pkgs.zsh;
   # };
@@ -310,7 +311,7 @@
 
     programs.bash = {
       enable = true;
-      profileExtra = "exec zsh";
+      bashrcExtra = "exec zsh";
     };
 
     programs.zsh = {
