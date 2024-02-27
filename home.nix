@@ -12,6 +12,17 @@
 
   nixpkgs.config.allowUnfree = true;
   fonts.fontconfig.enable = true;
+
+  home.keyboard = {
+    layout = "de";
+    variant = "neo-qwertz";
+  };
+
+  nix = {
+    package = pkgs.nix;
+    settings.experimental-features = [ "nix-command" "flakes" ];
+  };
+
   
   home.packages = with pkgs; [
       # NIX
