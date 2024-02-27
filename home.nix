@@ -98,6 +98,8 @@
       # linuxKernel.packages.linux_6_2.virtualbox
   ];
 
+  wayland.windowManager.hyprland.enable = true;
+
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
@@ -133,6 +135,8 @@
      BROWSER = "firefox";
      # TERMINAL = "alacritty"; todo
   };
+
+  # comment
 
   # https://github.com/nix-community/home-manager/issues/1439
   xdg = {
