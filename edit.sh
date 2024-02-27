@@ -4,7 +4,7 @@ set -euo pipefail
 IFS=$'\n\t'
 
 hx home.nix
-home-manager --flake . switch
 git add .
 git commit -m "$(date)"
 git push
+home-manager --flake . switch

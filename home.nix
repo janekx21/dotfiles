@@ -34,6 +34,7 @@
       # NIX
       cachix
       nix-tree
+      nixgl.nixGLIntel
       
       # PC
       alacritty
@@ -113,7 +114,6 @@
       
       # VIRTUALBOX
       # linuxKernel.packages.linux_6_2.virtualbox
-      nixgl.nixGLIntel
   ];
 
   wayland.windowManager.hyprland = {
