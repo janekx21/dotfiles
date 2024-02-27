@@ -113,6 +113,7 @@
       
       # VIRTUALBOX
       # linuxKernel.packages.linux_6_2.virtualbox
+      nixgl.nixGLIntel
   ];
 
   wayland.windowManager.hyprland = {
