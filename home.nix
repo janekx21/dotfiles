@@ -5,6 +5,8 @@
     "electron-25.9.0"
   ];
 
+  # TODO systemd.user.services
+
   home.username = "janek";
   home.homeDirectory = "/home/janek";
 # This value determines the Home Manager release that your configuration is # compatible with. This helps avoid breakage when a new Home Manager release # introduces backwards incompatible changes.  # # You should not change this value, even if you update Home Manager. If you do # want to update the value, then make sure to first check the Home Manager # release notes.
@@ -336,7 +338,7 @@
       ];
       shellAliases = {
         ll = "ls -l";
-        edit = "cd ~/Git/dotfiles; ./edit.sh";
+        edit = "pushd ~/Git/dotfiles && ./edit.sh";
         dc = "docker-compose";
         ld = "lazydocker";
         lg = "lazygit";
