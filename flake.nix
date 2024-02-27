@@ -20,6 +20,7 @@
       };
       # pkgs = nixpkgs.legacyPackages.${system};
     in {
+      # TODO nixpkgs.overlays = [ (final: prev: /* overlay goes here */) ];
       homeConfigurations."janek" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
