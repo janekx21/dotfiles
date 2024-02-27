@@ -308,7 +308,11 @@
       # };
     };
 
-    programs.bash.enable = true;
+    programs.bash = {
+      enable = true;
+      profileExtra = "exec zsh";
+    };
+
     programs.zsh = {
       enable = true;
       enableAutosuggestions = true;
