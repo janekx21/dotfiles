@@ -47,8 +47,8 @@
       zip
       gzip
       firefox
-      blender
       ungoogled-chromium
+      blender
       gimp-with-plugins
       inkscape-with-extensions
       keepassxc
