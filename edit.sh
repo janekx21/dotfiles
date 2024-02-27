@@ -3,7 +3,8 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-hx ~/Git/dotfiles/home.nix
+pushd ~/Git/dotfiles
+hx home.nix
 git add .
 git commit -m "$(date)"
 git push
