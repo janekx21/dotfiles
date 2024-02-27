@@ -18,6 +18,12 @@
     variant = "neo-qwertz";
   };
 
+  dconf.settings = {
+    "org.gnome.desktop.input-sources" = {
+      sources = [ (lib.hm.gvariant.mkTuple [ "xkb" "de+neo-qwertz" ]) ];
+    };
+  };
+
   nix = {
     package = pkgs.nix;
     settings.experimental-features = [ "nix-command" "flakes" ];
