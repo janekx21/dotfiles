@@ -29,7 +29,10 @@
     settings.experimental-features = [ "nix-command" "flakes" ];
   };
 
-  services.random-background.enable = true;
+  services.random-background = {
+    enable = true;
+    imageDirectory = "%h/Pictures/Backgrounds";
+  };
   
   home.packages = with pkgs; [
       # NIX
