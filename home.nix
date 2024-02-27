@@ -29,6 +29,7 @@
     settings.experimental-features = [ "nix-command" "flakes" ];
   };
 
+  services.random-background.enable = true;
   
   home.packages = with pkgs; [
       # NIX
@@ -332,7 +333,7 @@
       ];
       shellAliases = {
         ll = "ls -l";
-        edit = "~/Git/dotfiles/edit.sh";
+        edit = "cd; ~/Git/dotfiles/edit.sh";
         dc = "docker-compose";
         ld = "lazydocker";
         lg = "lazygit";
