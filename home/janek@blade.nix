@@ -44,7 +44,7 @@ in
 	  ];
 
 	  shellAliases = {
-	    edit = "~/Git/dotfiles/edit.sh";
+	    change = "~/Git/dotfiles/change.bash";
       cd = "z";
 	    ".." = "z ..";
 	    hx = "helix";

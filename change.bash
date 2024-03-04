@@ -3,9 +3,9 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-pushd ~/Git/dotfiles
-hx home.nix
+cd "$(dirname "$0")"
+$EDITOR ./flake.nix
 git add .
 git commit -m "$(date)"
 git push
-home-manager --flake . switch
+home-manager --flake .#$1 switch
