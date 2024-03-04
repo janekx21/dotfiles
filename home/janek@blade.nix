@@ -1,17 +1,46 @@
 { config, pkgs, lib, ... }:
+let
+  wrappWithNixGL = pkg:
+    (pkgs.runCommand "wrapped-${pkg.meta.mainProgram}" {
+      buildInputs = [pkgs.makeWrapper];
+      program = pkg.meta.mainProgram;
+      original = pkg;
+    } ''
+      mkdir $out
+      # Link every top-level folder from pkg to our new target
+      ln -s ${pkg}/* $out
+      # Except the bin folder
+      rm $out/bin
+      mkdir $out/bin
+      # We create the bin folder ourselves and link every binary in it
+      ln -s ${pkg}/bin/* $out/bin
+      # Except fot the program binary
+      rm $out/bin/$program
+
+      makeWrapper "${pkgs.nixgl.nixGLIntel}/bin/nixGLIntel" "$out/bin/$program" \
+        --argv0 $program \
+        --add-flags "$original/bin/$program" \
+    '');
+in
 {
 	home = {
 		username = "janek";
 	  homeDirectory = "/home/janek";
 	  stateVersion = "23.05";
 
-	  packages = with pkgs; [
-	    nil
-	    cachix
-	    nodePackages.vscode-langservers-extracted
-	    elmPackages.lamdera
-	    nixgl.nixGLIntel
-	    nixgl.nixVulkanIntel
+	  packages = [
+	    pkgs.nil
+	    pkgs.cachix
+	    pkgs.nodePackages.vscode-langservers-extracted
+	    pkgs.elmPackages.lamdera
+	    pkgs.nixgl.nixGLIntel
+	    pkgs.nixgl.nixVulkanIntel
+
+      # (pkgs.writeShellApplication {
+      #   name = "kitty-nixgl";
+      #   runtimeInputs = [pkgs.kitty pkgs.nixgl.nixGLIntel];
+      #   text = "nixGLIntel kitty";
+      # })
 	  ];
 
 	  shellAliases = {
@@ -261,6 +290,7 @@
       };
       theme = "Gruvbox Dark Hard";
       shellIntegration.enableZshIntegration = true;
+      package = wrappWithNixGL pkgs.kitty;
     };
 
     rofi = {
@@ -287,25 +317,26 @@
 			enable = true;
 		};
    
-	  chromium.package =
-			let
-		    wrapped-chromium =
-		      lib.makeOverridable
-		      ({commandLineArgs}:
-		        pkgs.runCommand "wrapped-chromium" {
-		          buildInputs = [pkgs.makeWrapper];
-		          chromium = pkgs.ungoogled-chromium;
-		        } ''
-		          mkdir -p "$out/bin"
-		          makeWrapper "${pkgs.nixgl.nixGLIntel}/bin/nixGLIntel" "$out/bin/chromium" \
-		            --argv0 chromium \
-		            --add-flags "$chromium/bin/chromium" \
-		            --add-flags ${lib.escapeShellArg commandLineArgs}
-		          ln -s "$out/bin/chromium" "$out/bin/chromium-browser"
-		          ln -s "$chromium/share" "$out/share"
-		        '')
-		      {commandLineArgs = [];};
-		  in
-	    lib.mkForce wrapped-chromium;
+    # chromium.enable = true;
+	  # chromium.package =
+			# let
+		 #    wrapped-chromium =
+		 #      lib.makeOverridable
+		 #      ({commandLineArgs}:
+		 #        pkgs.runCommand "wrapped-chromium" {
+		 #          buildInputs = [pkgs.makeWrapper];
+		 #          chromium = pkgs.ungoogled-chromium;
+		 #        } ''
+		 #          mkdir -p "$out/bin"
+		 #          makeWrapper "${pkgs.nixgl.nixGLIntel}/bin/nixGLIntel" "$out/bin/chromium" \
+		 #            --argv0 chromium \
+		 #            --add-flags "$chromium/bin/chromium" \
+		 #            --add-flags ${lib.escapeShellArg commandLineArgs}
+		 #          ln -s "$out/bin/chromium" "$out/bin/chromium-browser"
+		 #          ln -s "$chromium/share" "$out/share"
+		 #        '')
+		 #      {commandLineArgs = [];};
+		 #  in
+	  #   lib.mkForce wrapped-chromium;
   };
 }
