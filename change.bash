@@ -7,5 +7,5 @@ cd "$(dirname "$0")"
 $EDITOR ./flake.nix
 git add .
 git commit -m "$(date)"
-git push
 home-manager --flake .#$1 switch
+git push
