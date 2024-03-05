@@ -19,6 +19,9 @@
         inherit system;
         overlays = [ nixgl.overlay ];
   			config.allowUnfree = true;
+        config.permittedInsecurePackages = [
+          "electron-19.1.9"
+        ];
       };
     in {
       homeConfigurations = import ./home {

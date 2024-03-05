@@ -28,13 +28,36 @@ in
 	  homeDirectory = "/home/janek";
 	  stateVersion = "23.05";
 
-	  packages = [
-	    pkgs.nil
-	    pkgs.cachix
-	    pkgs.nodePackages.vscode-langservers-extracted
-	    pkgs.elmPackages.lamdera
-	    pkgs.nixgl.nixGLIntel
-	    pkgs.nixgl.nixVulkanIntel
+	  packages = with pkgs; [
+	    cachix
+	    nixgl.nixGLIntel
+	    nixgl.nixVulkanIntel
+
+	    nil
+      jetbrains.jdk
+      jetbrains.idea-ultimate
+      jetbrains.clion
+      jetbrains.rider
+      jetbrains.rider
+      jetbrains.rust-rover
+	    nodePackages.vscode-langservers-extracted
+      elmPackages.elm-language-server
+	    elmPackages.lamdera
+      elmPackages.elm-format
+      elmPackages.elm
+      omnisharp-roslyn
+
+      discord
+      discordo
+      anki-bin
+      etcher
+      eww
+      hyprpicker
+      insync
+      mattermost-desktop
+      nwg-bar
+      nwg-look
+      pomodoro
 
       # (pkgs.writeShellApplication {
       #   name = "kitty-nixgl";
@@ -44,7 +67,7 @@ in
 	  ];
 
 	  shellAliases = {
-	    change = "~/Git/dotfiles/change.bash";
+	    change = "~/Git/dotfiles/change.bash janek@blade";
       cd = "z";
 	    ".." = "z ..";
 	    hx = "helix";
