@@ -38,7 +38,6 @@ in
       jetbrains.idea-ultimate
       jetbrains.clion
       jetbrains.rider
-      jetbrains.rider
       jetbrains.rust-rover
 	    nodePackages.vscode-langservers-extracted
       elmPackages.elm-language-server
