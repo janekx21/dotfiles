@@ -118,6 +118,11 @@ in
     enable = true;
     package = lib.mkForce (lib.makeOverridable ({enableXWayland, enableNvidiaPatches}: wrappWithNixGL pkgs pkgs.hyprland) {enableXWayland = true; enableNvidiaPatches = false;});
     settings = {
+      input = {
+        kb_layout = "de";
+        kb_variant = "neo_qwertz";
+        follow_mouse = 1;
+      };
       decoration = {
         shadow_offset = "0 5";
         "col.shadow" = "rgba(00000099)";
@@ -126,6 +131,7 @@ in
       bind = [
         "$mod, W, exec, firefox"
         "$mod, Q, exec, gnome-terminal"
+        "$mod, C, killactive,"
       ];
       bindm = [
         # mouse movements
