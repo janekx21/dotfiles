@@ -26,10 +26,6 @@ in
     imageDirectory = "%h/Pictures/Backgrounds";
   };
 
-  wayland.windowManager.hyprland = {
-    enable = true;
-  };
-  
   home.packages = with pkgs; [
       # NIX
       cachix
@@ -128,7 +124,7 @@ in
       "$mod" = "SUPER";
       bind = [
         "$mod, W, exec, firefox"
-        "$mod, Q, exec, nixGL kitty"
+        "$mod, Q, exec, kitty"
       ];
       bindm = [
         # mouse movements
