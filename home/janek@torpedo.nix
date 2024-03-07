@@ -116,6 +116,7 @@ in
 
   wayland.windowManager.hyprland = {
     enable = true;
+    package = wrappWithNixGL pkgs pkgs.hyprland;
     settings = {
       decoration = {
         shadow_offset = "0 5";
