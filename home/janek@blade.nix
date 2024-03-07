@@ -3,7 +3,7 @@ let
   wrappWithNixGL = import ../utils/wrapp-with-nix-gl.nix;
 in
 {
-  import = [
+  imports = [
     ../modules/kitty.nix
     ./common.nix
   ];
