@@ -8,7 +8,7 @@ $EDITOR ./flake.nix
 git add .
 git commit -m "$(date)"
 if [[ $# -eq 0 ]]; then
-  home-manager --flake .#$(hostname -s)@$(whoami) switch
+  home-manager --flake .#$(whoami)@$(hostname -s) switch
 else
   home-manager --flake .#$1 switch
 fi
