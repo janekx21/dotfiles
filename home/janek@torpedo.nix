@@ -25,6 +25,10 @@ in
     enable = true;
     imageDirectory = "%h/Pictures/Backgrounds";
   };
+
+  wayland.windowManager.hyprland = {
+    enable = true;
+  };
   
   home.packages = with pkgs; [
       # NIX
