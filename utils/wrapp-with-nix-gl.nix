@@ -1,4 +1,4 @@
-lib: pkgs: pkg:
+pkgs: pkg:
 (pkgs.runCommand "wrapped-${pkg.meta.mainProgram}" {
   buildInputs = [pkgs.makeWrapper];
   program = pkg.meta.mainProgram;
