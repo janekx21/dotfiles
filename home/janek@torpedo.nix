@@ -124,14 +124,25 @@ in
         follow_mouse = 1;
       };
       decoration = {
+        rounding = 16;
+        drop_shadow = true;
+        shadow_range = 4;
+        shadow_render_power = 3;
         shadow_offset = "0 5";
         "col.shadow" = "rgba(00000099)";
+      };
+      animations = {
+        enabled = true;
+        # TODO get more specific
       };
       "$mod" = "SUPER";
       bind = [
         "$mod, W, exec, firefox"
         "$mod, Q, exec, gnome-terminal"
+        "$mod, E, exec, nautilus"
+        "$mod, R, exec, rofi --show drun"
         "$mod, C, killactive,"
+        "$mod, V, togglefloating,"
       ];
       bindm = [
         # mouse movements
