@@ -1,5 +1,8 @@
 { pkgs, lib, ... }:
 
+let
+  wrappWithNixGL = import ../utils/wrapp-with-nix-gl.nix;
+in
 {
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
@@ -35,6 +38,10 @@
     enable = true;
     imageDirectory = "%h/Pictures/Backgrounds";
   };
+
+  imports = [
+    ../modules/kitty.nix
+  ];
   
   home.packages = with pkgs; [
       # NIX
@@ -304,18 +311,19 @@
       #   };
       # };
     };
-    programs.kitty = {
-      enable = true;
-      font = {
-        size = 15;
-        name = "JetBrainsMono Nerd Font";
-      };
-      shellIntegration.enableZshIntegration = true;
-      # theme = "Material Dark";
-      # settings = {
-        # linux_display_server = "x11";
-      # };
-    };
+    # programs.kitty = {
+    #   enable = true;
+    #   font = {
+    #     size = 15;
+    #     name = "JetBrainsMono Nerd Font";
+    #   };
+    #   shellIntegration.enableZshIntegration = true;
+    #   package = wrappWithNixGL pkgs pkgs.kitty;
+    #   # theme = "Material Dark";
+    #   # settings = {
+    #     # linux_display_server = "x11";
+    #   # };
+    # };
 
     programs.bash = {
       enable = true;
