@@ -118,6 +118,9 @@ in
     enable = true;
     package = lib.mkForce (lib.makeOverridable ({enableXWayland, enableNvidiaPatches}: wrappWithNixGL pkgs pkgs.hyprland) {enableXWayland = true; enableNvidiaPatches = false;});
     settings = {
+      monitor = [
+        ",preferred,auto,auto"
+      ];
       general = {
         border_size = 2;
         "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
