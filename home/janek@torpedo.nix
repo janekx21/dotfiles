@@ -118,6 +118,11 @@ in
     enable = true;
     package = lib.mkForce (lib.makeOverridable ({enableXWayland, enableNvidiaPatches}: wrappWithNixGL pkgs pkgs.hyprland) {enableXWayland = true; enableNvidiaPatches = false;});
     settings = {
+      general = {
+        border_size = 2;
+        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        "col.inactive_border" = "rgba(595959aa)";
+      };
       input = {
         kb_layout = "de";
         kb_variant = "neo_qwertz";
