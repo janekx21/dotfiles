@@ -125,7 +125,7 @@ in
       "$mod" = "SUPER";
       bind = [
         "$mod, W, exec, firefox"
-        "$mod, Q, exec, kitty"
+        "$mod, Q, exec, gnome-terminal"
       ];
       bindm = [
         # mouse movements
