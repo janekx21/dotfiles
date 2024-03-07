@@ -7,7 +7,7 @@ cd "$(dirname "$0")"
 $EDITOR ./flake.nix
 git add .
 git commit -m "$(date)"
-if [[ -z $1 ]]; then
+if [[ -z "$1" ]]; then
   home-manager --flake .#$(hostname -s)@$(whoami) switch
 else
   home-manager --flake .#$1 switch
