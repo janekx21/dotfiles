@@ -314,25 +314,16 @@ in
       enable = true;
       enableAutosuggestions = true;
       plugins = [{
-        name = "powerlevel10k";
-        src = pkgs.zsh-powerlevel10k;
-        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-      }
-      {
-        name = "powerlevel10k-config";
-        src = lib.cleanSource ./p10k-config;
-        file = "p10k.zsh";
-      }
+          name = "powerlevel10k";
+          src = pkgs.zsh-powerlevel10k;
+          file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+        }
+        {
+          name = "powerlevel10k-config";
+          src = lib.cleanSource ./p10k-config;
+          file = "p10k.zsh";
+        }
       ];
-      shellAliases = {
-        ll = "ls -l";
-  	    change = "~/Git/dotfiles/change.bash";
-        dc = "docker-compose";
-        ld = "lazydocker";
-        lg = "lazygit";
-        cd = "z";
-        ".." = "z ..";
-      };
       envExtra = "bindkey \"^[[3~\" delete-char";
     };
 
