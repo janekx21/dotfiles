@@ -1,38 +1,15 @@
 { config, pkgs, lib, ... }:
 let
-  wrappWithNixGL = pkg:
-    (pkgs.runCommand "wrapped-${pkg.meta.mainProgram}" {
-      buildInputs = [pkgs.makeWrapper];
-      program = pkg.meta.mainProgram;
-      original = pkg;
-    } ''
-      mkdir $out
-      # Link every top-level folder from pkg to our new target
-      ln -s ${pkg}/* $out
-      # Except the bin folder
-      rm $out/bin
-      mkdir $out/bin
-      # We create the bin folder ourselves and link every binary in it
-      ln -s ${pkg}/bin/* $out/bin
-      # Except fot the program binary
-      rm $out/bin/$program
-
-      makeWrapper "${pkgs.nixgl.nixGLIntel}/bin/nixGLIntel" "$out/bin/$program" \
-        --argv0 $program \
-        --add-flags "$original/bin/$program" \
-    '');
+  wrappWithNixGL = import ../utils/wrapp-with-nix-gl.nix;
 in
 {
+  import = [
+    ../modules/kitty.nix
+    ./common.nix
+  ];
+
 	home = {
-		username = "janek";
-	  homeDirectory = "/home/janek";
-	  stateVersion = "23.05";
-
 	  packages = with pkgs; [
-	    cachix
-	    nixgl.nixGLIntel
-	    nixgl.nixVulkanIntel
-
 	    nil
       jetbrains.jdk
       jetbrains.idea-ultimate
@@ -57,33 +34,10 @@ in
       nwg-bar
       nwg-look
       pomodoro
-
-      # (pkgs.writeShellApplication {
-      #   name = "kitty-nixgl";
-      #   runtimeInputs = [pkgs.kitty pkgs.nixgl.nixGLIntel];
-      #   text = "nixGLIntel kitty";
-      # })
 	  ];
-
-	  shellAliases = {
-	    change = "~/Git/dotfiles/change.bash janek@blade";
-      cd = "z";
-	    ".." = "z ..";
-	    hx = "helix";
-	    ide = "zellij --layout=helix-ide";
-	    lg = "lazygit";
-	  };
-
-	  sessionVariables = {
-	    # EDITOR = "helix"; this is set with helix module
-	  };
 	};
 
-  fonts.fontconfig.enable = true;
-
   programs = {
-    home-manager.enable = true;
-
     git = {
       enable = true;
       lfs.enable = true;
@@ -302,17 +256,6 @@ in
           }
         ];
       };
-    };
-
-    kitty = {
-      enable = true;
-      font = {
-        size = 12;
-        name = "JetBrainsMono Nerd Font"; # TODO use nix pkgs
-      };
-      theme = "Gruvbox Dark Hard";
-      shellIntegration.enableZshIntegration = true;
-      package = wrappWithNixGL pkgs.kitty;
     };
 
     rofi = {

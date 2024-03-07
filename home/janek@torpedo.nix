@@ -4,24 +4,16 @@ let
   wrappWithNixGL = import ../utils/wrapp-with-nix-gl.nix;
 in
 {
+  imports = [
+    ../modules/kitty.nix
+    ./common.nix
+  ];
+
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
   ];
 
   # TODO systemd.user.services
-
-  home.username = "janek";
-  home.homeDirectory = "/home/janek";
-# This value determines the Home Manager release that your configuration is # compatible with. This helps avoid breakage when a new Home Manager release # introduces backwards incompatible changes.  # # You should not change this value, even if you update Home Manager. If you do # want to update the value, then make sure to first check the Home Manager # release notes.
-  home.stateVersion = "23.05"; # Please read the comment before changing.
-
-  nixpkgs.config.allowUnfree = true;
-  fonts.fontconfig.enable = true;
-
-  home.keyboard = {
-    layout = "de";
-    variant = "neo-qwertz";
-  };
 
   dconf.settings = {
     "org.gnome.desktop.input-sources" = {
@@ -29,19 +21,10 @@ in
     };
   };
 
-  nix = {
-    package = pkgs.nix;
-    settings.experimental-features = [ "nix-command" "flakes" ];
-  };
-
   services.random-background = {
     enable = true;
     imageDirectory = "%h/Pictures/Backgrounds";
   };
-
-  imports = [
-    ../modules/kitty.nix
-  ];
   
   home.packages = with pkgs; [
       # NIX
@@ -184,7 +167,6 @@ in
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
     # EDITOR = "emacs";
-     EDITOR="hx";
      BROWSER = "firefox";
      # TERMINAL = "alacritty"; todo
   };
@@ -202,6 +184,7 @@ in
     #   };
     # };
   };
+
   targets.genericLinux.enable=true;
 
   gtk = {
@@ -216,9 +199,6 @@ in
     };
   };
 
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 
   programs.zoxide.enable = true;
   programs.fzf.enable = true;
@@ -346,7 +326,7 @@ in
       ];
       shellAliases = {
         ll = "ls -l";
-        edit = "~/Git/dotfiles/edit.sh";
+  	    change = "~/Git/dotfiles/change.bash";
         dc = "docker-compose";
         ld = "lazydocker";
         lg = "lazygit";
