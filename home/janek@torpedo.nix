@@ -120,6 +120,7 @@ in
     settings = {
       monitor = [
         ",preferred,auto,auto"
+        "eDP-1,preferred,auto,1"
       ];
       general = {
         border_size = 2;
