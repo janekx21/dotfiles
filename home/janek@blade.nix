@@ -36,7 +36,9 @@
 	};
 
   programs = {
-    nixvim.enable = true;
+    nixvim = {
+      enable = true;
+    };
   
     git = {
       enable = true;
