@@ -1,4 +1,5 @@
 {
+
   description = "Nix configs of Janek";
 
   inputs = {
