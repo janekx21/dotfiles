@@ -24,7 +24,7 @@
       discord
       discordo
       anki-bin
-      etcher
+      # etcher # unsecure :<
       eww
       hyprpicker
       insync
