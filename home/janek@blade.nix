@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ inputs, config, pkgs, lib, ... }:
 let
   wrappWithNixGL = import ../utils/wrapp-with-nix-gl.nix;
 in
@@ -6,6 +6,7 @@ in
   imports = [
     ../modules/kitty.nix
     ./common.nix
+		inputs.nixvim.homeManagerModules.nixvim
   ];
 
 	home = {
@@ -38,6 +39,8 @@ in
 	};
 
   programs = {
+    programs.nixvim.enable = true;
+  
     git = {
       enable = true;
       lfs.enable = true;
