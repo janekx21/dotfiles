@@ -1,7 +1,4 @@
 { inputs, config, pkgs, lib, ... }:
-let
-  wrappWithNixGL = import ../utils/wrapp-with-nix-gl.nix;
-in
 {
   imports = [
     ../modules/kitty.nix
