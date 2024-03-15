@@ -38,6 +38,8 @@
   programs = {
     nixvim = {
       enable = true;
+      colorschemes.gruvbox.enable = true;
+      plugins.lightline.enable = true;
     };
   
     git = {
@@ -68,7 +70,7 @@
 
     zsh = {
       enable = true;
-      enableAutosuggestions = true;
+      autosuggestion.enable = true;
       plugins = [
         {
           name = "powerlevel10k";
