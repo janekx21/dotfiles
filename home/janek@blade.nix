@@ -32,6 +32,7 @@
       nwg-bar
       nwg-look
       pomodoro
+      glow
 	  ];
 	};
 
