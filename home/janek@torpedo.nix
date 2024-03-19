@@ -380,7 +380,7 @@ in
       # todo
       settings = {
         # copy_command = "xclip -selection clipboard";
-        copy_on_select = false;
+        copy_on_select = false; # dont copy stuff :>
         pane_frames = false;
         ui.pane_frames.rounded_corners = true;
       };

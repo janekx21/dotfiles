@@ -4,6 +4,7 @@ set -euo pipefail
 IFS=$'\n\t'
 
 cd "$(dirname "$0")"
+git pull
 $EDITOR ./flake.nix
 git add .
 git commit -m "$(date)"
