@@ -39,7 +39,7 @@ in
       firefox
       ungoogled-chromium
       blender
-      gimp-with-plugins
+      gimp
       inkscape-with-extensions
       keepassxc
       neofetch
