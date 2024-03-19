@@ -1,6 +1,7 @@
 {
   description = "Nix configs of Janek";
 
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
@@ -10,6 +11,11 @@
     };
 
     nixgl.url = "github:guibou/nixGL";
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ { nixpkgs, home-manager, nixgl, ... }:

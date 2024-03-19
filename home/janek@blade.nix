@@ -1,11 +1,9 @@
-{ config, pkgs, lib, ... }:
-let
-  wrappWithNixGL = import ../utils/wrapp-with-nix-gl.nix;
-in
+{ inputs, config, pkgs, lib, ... }:
 {
   imports = [
     ../modules/kitty.nix
     ./common.nix
+		inputs.nixvim.homeManagerModules.nixvim
   ];
 
 	home = {
@@ -26,7 +24,7 @@ in
       discord
       discordo
       anki-bin
-      etcher
+      # etcher # unsecure :<
       eww
       hyprpicker
       insync
@@ -34,10 +32,17 @@ in
       nwg-bar
       nwg-look
       pomodoro
+      glow
 	  ];
 	};
 
   programs = {
+    nixvim = {
+      enable = true;
+      colorschemes.gruvbox.enable = true;
+      plugins.lightline.enable = true;
+    };
+  
     git = {
       enable = true;
       lfs.enable = true;
@@ -66,7 +71,7 @@ in
 
     zsh = {
       enable = true;
-      enableAutosuggestions = true;
+      autosuggestion.enable = true;
       plugins = [
         {
           name = "powerlevel10k";
