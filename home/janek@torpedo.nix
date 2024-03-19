@@ -338,7 +338,7 @@ in
 
   programs.zsh = {
     enable = true;
-    autosuggestions.enable = true;
+    autosuggestion.enable = true;
     plugins = [{
         name = "powerlevel10k";
         src = pkgs.zsh-powerlevel10k;
