@@ -245,78 +245,78 @@ in
     };
   };
   programs.helix = {
-      enable = true;
-      defaultEditor = true;
-      # todo needs nightly defaultEditor = true;
-      settings = {
-        theme = "gruvbox_dark_hard";
-        editor = {
-          lsp.display-messages = true;
-          lsp.display-inlay-hints = true;
-          auto-save = true;
-          auto-format = true;
-          cursorline = true;
-          bufferline = "multiple";
-          color-modes = true;
-          cursor-shape = {
-            insert = "bar";
-            normal = "block";
-            select = "block";
-          };
-          indent-guides = {
-            render = true;
-            character = "▏";
-            skip-levels = 1;
-          };
-          soft-wrap.enable = true;
-          statusline = {
-            left = ["mode" "spinner" "file-base-name" "read-only-indicator" "file-modification-indicator" "version-control"];
-            right = ["diagnostics" "selections" "register" "position" "position-percentage" "file-encoding"];
-          };
+    enable = true;
+    defaultEditor = true;
+    # todo needs nightly defaultEditor = true;
+    settings = {
+      theme = "gruvbox_dark_hard";
+      editor = {
+        lsp.display-messages = true;
+        lsp.display-inlay-hints = true;
+        auto-save = true;
+        auto-format = true;
+        cursorline = true;
+        bufferline = "multiple";
+        color-modes = true;
+        cursor-shape = {
+          insert = "bar";
+          normal = "block";
+          select = "block";
         };
-        keys.insert = {
-          j = { k = "normal_mode"; };
-          k = { j = "normal_mode"; };
+        indent-guides = {
+          render = true;
+          character = "▏";
+          skip-levels = 1;
         };
-
-        keys.normal = {
-          X = ["extend_line_up" "extend_to_line_bounds"];
-          A-x = ["extend_to_line_bounds"];
-          space = {
-            l = ":buffer-next";
-            h = ":buffer-previous";
-            q = ":buffer-close";
-          };
-        };
-
-        keys.select = {
-          X = ["extend_line_up" "extend_to_line_bounds"];
-          A-x = ["extend_to_line_bounds"];
+        soft-wrap.enable = true;
+        statusline = {
+          left = ["mode" "spinner" "file-base-name" "read-only-indicator" "file-modification-indicator" "version-control"];
+          right = ["diagnostics" "selections" "register" "position" "position-percentage" "file-encoding"];
         };
       };
-      languages = {
-        language-server = {
-          vls = {
-            command = "vls";
-          };
-          omnisharp = {
-            timeout = 10000;
-          };
-        };
-        language = [
-          { name = "vue"; language-servers = ["vls"]; }
-        ];
+      keys.insert = {
+        j = { k = "normal_mode"; };
+        k = { j = "normal_mode"; };
       };
-      # languages = {
-      #   c-sharp = {
-      #     language-server = {
-      #       command = "OmniSharp";
-      #       args = ["-lsp"];
-      #       timeout=10000;
-      #     };
-      #   };
-      # };
+
+      keys.normal = {
+        X = ["extend_line_up" "extend_to_line_bounds"];
+        A-x = ["extend_to_line_bounds"];
+        space = {
+          l = ":buffer-next";
+          h = ":buffer-previous";
+          q = ":buffer-close";
+        };
+      };
+
+      keys.select = {
+        X = ["extend_line_up" "extend_to_line_bounds"];
+        A-x = ["extend_to_line_bounds"];
+      };
     };
+    languages = {
+      language-server = {
+        vls = {
+          command = "vls";
+        };
+        omnisharp = {
+          timeout = 10000;
+        };
+      };
+      language = [
+        { name = "vue"; language-servers = ["vls"]; }
+      ];
+    };
+    # languages = {
+    #   c-sharp = {
+    #     language-server = {
+    #       command = "OmniSharp";
+    #       args = ["-lsp"];
+    #       timeout=10000;
+    #     };
+    #   };
+    # };
+  };
     # programs.kitty = {
     #   enable = true;
     #   font = {
@@ -331,73 +331,72 @@ in
     #   # };
     # };
 
-    programs.bash = {
-      enable = true;
-      bashrcExtra = "exec zsh";
-    };
+  programs.bash = {
+    enable = true;
+    bashrcExtra = "exec zsh";
+  };
 
-    programs.zsh = {
-      enable = true;
-      enableAutosuggestions = true;
-      plugins = [{
-          name = "powerlevel10k";
-          src = pkgs.zsh-powerlevel10k;
-          file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-        }
-        {
-          name = "powerlevel10k-config";
-          src = lib.cleanSource ./p10k-config;
-          file = "p10k.zsh";
-        }
-      ];
-      envExtra = "bindkey \"^[[3~\" delete-char";
-    };
+  programs.zsh = {
+    enable = true;
+    autosuggestions.enable = true;
+    plugins = [{
+        name = "powerlevel10k";
+        src = pkgs.zsh-powerlevel10k;
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
+      {
+        name = "powerlevel10k-config";
+        src = lib.cleanSource ./p10k-config;
+        file = "p10k.zsh";
+      }
+    ];
+    envExtra = "bindkey \"^[[3~\" delete-char";
+  };
 
-    # TODO
-    # programs.starship = {
-    #   enable = true;
-    #   enableZshIntegration
-    # };
+  # TODO
+  # programs.starship = {
+  #   enable = true;
+  #   enableZshIntegration
+  # };
 
-    programs.lazygit ={
-      enable = true;
-      settings = {
-        gui = {
-          nerdFontsVersion = "3";
-          border = "rounded";
-        };
-        git = {
-          parseEmoji = true;
-          paging.pager = "delta --dark --paging=never";
-        };
-        os.copyToClipboardCmd = "xclip";
+  programs.lazygit ={
+    enable = true;
+    settings = {
+      gui = {
+        nerdFontsVersion = "3";
+        border = "rounded";
       };
-    };
-
-    programs.zellij = {
-      enable = true;
-      # enableZshIntegration = true;
-      # todo
-      settings = {
-        # copy_command = "xclip -selection clipboard";
-        copy_on_select = false; # dont copy stuff :>
-        pane_frames = false;
-        ui.pane_frames.rounded_corners = true;
+      git = {
+        parseEmoji = true;
+        paging.pager = "delta --dark --paging=never";
       };
+      os.copyToClipboardCmd = "xclip";
     };
+  };
 
-    programs.joshuto = {
-      enable = true;
-      settings = {
-        # xdg_open = true; # did not get this to work with helix
-        preview.preview_script = "~/.config/home-manager/joshuto/preview_file.sh";
-      };
-    };
+  programs.zellij = {
+    enable = true;
+    # enableZshIntegration = true;
+    # settings managed by xdg.configFile.zellij
+  };
 
-    programs = {
-      direnv.enable = true;
-      direnv.enableZshIntegration = true;
-      direnv.enableBashIntegration = true;
-      direnv.nix-direnv.enable = true;
+  programs.joshuto = {
+    enable = true;
+    settings = {
+      # xdg_open = true; # did not get this to work with helix
+      preview.preview_script = "~/.config/home-manager/joshuto/preview_file.sh";
     };
+  };
+
+  programs = {
+    direnv.enable = true;
+    direnv.enableZshIntegration = true;
+    direnv.enableBashIntegration = true;
+    direnv.nix-direnv.enable = true;
+  };
+
+  xdg.configFile.zellij = {
+    source = ../dot_config/zellij;
+    recursive = true;
+  };
 }
