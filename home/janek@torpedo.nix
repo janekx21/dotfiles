@@ -65,7 +65,6 @@ in
 
       # IDE
       git
-      zellij
       vtm
       jetbrains.rider
       jetbrains.webstorm
@@ -380,8 +379,10 @@ in
       # enableZshIntegration = true;
       # todo
       settings = {
-        copy_command = "xclip";
+        # copy_command = "xclip -selection clipboard";
+        copy_on_select = false;
         pane_frames = false;
+        ui.pane_frames.rounded_corners = true;
       };
     };
 
