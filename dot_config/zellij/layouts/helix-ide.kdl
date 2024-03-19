@@ -4,9 +4,6 @@ layout {
             plugin location="zellij:compact-bar"
         }
         children
-        // pane size=1 borderless=true {
-        //     plugin location="zellij:status-bar"
-        // }
     }
 
     tab name="helix" focus=true {
@@ -14,14 +11,14 @@ layout {
             args "."
         }
     }
+    tab name="terminal"
     tab name="lazygit" {
         pane command="lazygit"
-    }
-    tab name="lazydocker" {
-        pane command="lazydocker"
     }
     tab name="joshuto" {
         pane command="joshuto"
     }
-    tab name="terminal"
+    tab name="lazydocker" {
+        pane command="lazydocker"
+    }
 }
