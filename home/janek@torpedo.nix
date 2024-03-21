@@ -59,8 +59,7 @@ in
       minecraft
       p7zip
       cpulimit
-      memtest86plus
-      memtest86-efi
+      clamtk
 
 
       # IDE
