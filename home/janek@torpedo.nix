@@ -33,7 +33,6 @@ in
       nixgl.nixGLIntel
       
       # PC
-      intune-portal
       alacritty
       zip
       gzip
