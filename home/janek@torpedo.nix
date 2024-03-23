@@ -6,6 +6,7 @@ in
 {
   imports = [
     ../modules/kitty.nix
+    ../modules/zellij
     ./common.nix
   ];
 
@@ -373,12 +374,6 @@ in
     };
   };
 
-  programs.zellij = {
-    enable = true;
-    # enableZshIntegration = true;
-    # settings managed by xdg.configFile.zellij
-  };
-
   programs.joshuto = {
     enable = true;
     settings = {
@@ -392,10 +387,5 @@ in
     direnv.enableZshIntegration = true;
     direnv.enableBashIntegration = true;
     direnv.nix-direnv.enable = true;
-  };
-
-  xdg.configFile.zellij = {
-    source = ../dot_config/zellij;
-    recursive = true;
   };
 }

@@ -2,6 +2,7 @@
 {
   imports = [
     ../modules/kitty.nix
+    ../modules/zellij
     ./common.nix
 		inputs.nixvim.homeManagerModules.nixvim
   ];
@@ -279,10 +280,6 @@
       nix-direnv.enable = true;
     };
 
-    zellij = {
-      enable = true;
-    };
-		
 		joshuto = {
 			enable = true;
 		};
