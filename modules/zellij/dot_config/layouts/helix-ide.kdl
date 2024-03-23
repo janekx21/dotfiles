@@ -2,7 +2,7 @@ layout {
     default_tab_template {
         pane size=1 borderless=true {
             // plugin location="zellij:compact-bar"
-            plugin location="file:/home/janek/.config/zellij/zjstatus.wasm" {
+            plugin location="https://github.com/dj95/zjstatus/releases/download/v0.12.0/zjstatus.wasm" {
                 // #[fg=#000000,bg=#ff9001,bold] {session} #[]  
                 format_left  "{mode} {tabs}"
                 format_right "{command_git_branch}"
