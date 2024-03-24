@@ -9,6 +9,7 @@ let
 	# kitty
 	# chromium
 	# rambox
+  # hyprpicker
   wrappWithNixGL = import ../utils/wrapp-with-nix-gl.nix;
 
 	# // TODO
