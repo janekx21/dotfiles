@@ -119,7 +119,7 @@ in
         "$mod, E, exec, nautilus -w"
         "$mod, X, exec, /opt/Rambox/rambox --no-sandbox"
 				"$mod, u, exec, kitty sh -c change"
-        "$mod, R, exec, wofi --show drun"
+        "$mod, R, exec, rofi -show drun"
 
 				# System shortcuts
         "$mod, C, killactive,"
