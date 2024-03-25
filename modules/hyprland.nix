@@ -114,8 +114,8 @@ in
 			"$mod" = "SUPER";
       bind = [
 				# User shortcuts
-        "$mod, Q, exec, kitty"
-        "$mod, W, exec, chromium --ozone-platform-hint=auto"
+        "$mod, Q, exec, nixGLIntel kitty"
+        "$mod, W, exec, nixGLIntel chromium --ozone-platform-hint=auto"
         "$mod, E, exec, nautilus -w"
         "$mod, X, exec, /opt/Rambox/rambox --no-sandbox"
 				"$mod, u, exec, kitty sh -c change"
