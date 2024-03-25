@@ -115,7 +115,7 @@ in
       bind = [
 				# User shortcuts
         "$mod, Q, exec, ${config.programs.kitty.package}/bin/kitty"
-        "$mod, W, exec, ${config.programs.ungoogled-chromium.package}/bin/chromium --ozone-platform-hint=auto"
+        "$mod, W, exec, \"${config.programs.ungoogled-chromium.package}/bin/chromium --ozone-platform-hint=auto\""
         "$mod, E, exec, nautilus -w"
         "$mod, X, exec, /opt/Rambox/rambox --no-sandbox"
 				"$mod, u, exec, kitty sh -c change"
