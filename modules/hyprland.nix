@@ -115,10 +115,10 @@ in
       bind = [
 				# User shortcuts
         "$mod, Q, exec, ${config.programs.kitty.package}/bin/kitty"
-        "$mod, W, exec, ${pkgs.ungoogled-chromium}/bin/chromium --ozone-platform-hint=auto\""
+        "$mod, W, exec, nixGLIntel ${pkgs.ungoogled-chromium}/bin/chromium --ozone-platform-hint=auto\""
         "$mod, E, exec, ${pkgs.gnome.nautilus}/bin/nautilus -w"
         "$mod, X, exec, ${pkgs.rambox}/bin/rambox --no-sandbox"
-				"$mod, u, exec, ${config.programs.kitty.package}/bin/kitty sh -c change"
+				"$mod, u, exec, ${config.programs.kitty.package}/bin/kitty bash -c change"
         "$mod, R, exec, ${config.programs.rofi.package}/bin/rofi -show drun"
 
 				# System shortcuts
