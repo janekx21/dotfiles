@@ -383,6 +383,10 @@ in
     };
   };
 
+  programs.rofi = {
+    enable = true;
+  };
+
   programs = {
     direnv.enable = true;
     direnv.enableZshIntegration = true;
