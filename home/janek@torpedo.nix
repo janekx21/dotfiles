@@ -7,6 +7,7 @@ in
   imports = [
     ../modules/kitty.nix
     ../modules/zellij
+    ../modules/hyprland.nix
     ./common.nix
   ];
 
@@ -113,53 +114,53 @@ in
       # linuxKernel.packages.linux_6_2.virtualbox
   ];
 
-  wayland.windowManager.hyprland = {
-    enable = true;
-    package = lib.mkForce (lib.makeOverridable ({enableXWayland, enableNvidiaPatches}: wrappWithNixGL pkgs pkgs.hyprland) {enableXWayland = true; enableNvidiaPatches = false;});
-    settings = {
-      monitor = [
-        ",preferred,auto,auto"
-        "eDP-1,preferred,auto,1"
-      ];
-      general = {
-        border_size = 2;
-        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        "col.inactive_border" = "rgba(595959aa)";
-      };
-      input = {
-        kb_layout = "de";
-        kb_variant = "neo_qwertz";
-        follow_mouse = 1;
-      };
-      decoration = {
-        rounding = 16;
-        drop_shadow = true;
-        shadow_range = 4;
-        shadow_render_power = 3;
-        shadow_offset = "0 5";
-        "col.shadow" = "rgba(00000099)";
-      };
-      animations = {
-        enabled = true;
-        # TODO get more specific
-      };
-      "$mod" = "SUPER";
-      bind = [
-        "$mod, W, exec, firefox"
-        "$mod, Q, exec, gnome-terminal"
-        "$mod, E, exec, nautilus"
-        "$mod, R, exec, rofi --show drun"
-        "$mod, C, killactive,"
-        "$mod, V, togglefloating,"
-      ];
-      bindm = [
-        # mouse movements
-        "$mod, mouse:272, movewindow"
-        "$mod, mouse:273, resizewindow"
-        "$mod ALT, mouse:272, resizewindow"
-      ];
-    };
-  };
+  # wayland.windowManager.hyprland = {
+  #   enable = true;
+  #   package = lib.mkForce (lib.makeOverridable ({enableXWayland, enableNvidiaPatches}: wrappWithNixGL pkgs pkgs.hyprland) {enableXWayland = true; enableNvidiaPatches = false;});
+  #   settings = {
+  #     monitor = [
+  #       ",preferred,auto,auto"
+  #       "eDP-1,preferred,auto,1"
+  #     ];
+  #     general = {
+  #       border_size = 2;
+  #       "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+  #       "col.inactive_border" = "rgba(595959aa)";
+  #     };
+  #     input = {
+  #       kb_layout = "de";
+  #       kb_variant = "neo_qwertz";
+  #       follow_mouse = 1;
+  #     };
+  #     decoration = {
+  #       rounding = 16;
+  #       drop_shadow = true;
+  #       shadow_range = 4;
+  #       shadow_render_power = 3;
+  #       shadow_offset = "0 5";
+  #       "col.shadow" = "rgba(00000099)";
+  #     };
+  #     animations = {
+  #       enabled = true;
+  #       # TODO get more specific
+  #     };
+  #     "$mod" = "SUPER";
+  #     bind = [
+  #       "$mod, W, exec, firefox"
+  #       "$mod, Q, exec, gnome-terminal"
+  #       "$mod, E, exec, nautilus"
+  #       "$mod, R, exec, rofi --show drun"
+  #       "$mod, C, killactive,"
+  #       "$mod, V, togglefloating,"
+  #     ];
+  #     bindm = [
+  #       # mouse movements
+  #       "$mod, mouse:272, movewindow"
+  #       "$mod, mouse:273, resizewindow"
+  #       "$mod ALT, mouse:272, resizewindow"
+  #     ];
+  #   };
+  # };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
