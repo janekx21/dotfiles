@@ -14,7 +14,7 @@ in
      chromium = {
       enableWideVine = true;
       # gnomeKeyringSupport = true;
-      ungoogled = true;
+      # ungoogled = true;
       # commandLineArgs = 
     };
   };
