@@ -9,6 +9,7 @@ let
 	# kitty
 	# chromium
 	# rambox
+	# swaylock
   wrappWithNixGL = import ../utils/wrapp-with-nix-gl.nix;
 
 	# // TODO
@@ -25,8 +26,10 @@ let
 	];
 in
 {
+	import = [
+		./waybar
+	];
 
-	
   home.packages = with pkgs; [
 		vimix-cursors
 	];
@@ -123,8 +126,8 @@ in
         "$mod, Q, exec, ${config.programs.kitty.package}/bin/kitty"
         "$mod, W, exec, ${config.programs.chromium.package}/bin/chromium --ozone-platform-hint=auto"
         "$mod, E, exec, ${pkgs.gnome.nautilus}/bin/nautilus -w"
-        "$mod, X, exec, ${pkgs.rambox}/bin/rambox --no-sandbox"
-				"$mod, u, exec, ${config.programs.kitty.package}/bin/kitty bash -c change"
+        # "$mod, X, exec, ${pkgs.rambox}/bin/rambox --no-sandbox"
+				"$mod, u, exec, ${config.programs.kitty.package}/bin/kitty ~/Git/dotfiles/change.bash"
         "$mod, R, exec, ${config.programs.rofi.package}/bin/rofi -show drun"
 
 				# System shortcuts
