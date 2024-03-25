@@ -26,7 +26,7 @@ let
 	];
 in
 {
-	import = [
+	imports = [
 		./waybar
 	];
 
