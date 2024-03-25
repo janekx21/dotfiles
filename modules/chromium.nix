@@ -13,7 +13,7 @@ in
   nixpkgs.config = {
      chromium = {
       enableWideVine = true;
-      gnomeKeyringSupport = true;
+      # gnomeKeyringSupport = true;
       ungoogled = true;
       # commandLineArgs = 
     };
