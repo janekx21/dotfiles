@@ -6,7 +6,7 @@ in
 {
   programs.chromium = {
     enable = true;
-    package = wrappWithNixGL pkgs pkgs.chromium;
+    package = wrappWithNixGL pkgs pkgs.ungoogled-chromium;
     # programs.chromium.extensions
   };
 
