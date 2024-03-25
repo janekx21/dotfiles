@@ -4,7 +4,7 @@
   programs.waybar = {
     enable = true;
     settings = {
-      "margin" = "20 20 0 20";
+      margin = "20 20 0 20";
       "modules-left" = [
           "sway/workspaces"
           "sway/language"
