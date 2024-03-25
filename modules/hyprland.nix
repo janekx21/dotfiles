@@ -40,8 +40,8 @@ in
 			];
 			env = [
 				"QT_QPA_PLATFORMTHEME,qt5ct"
-				"XCURSOR_SIZE,24"
-				"GDK_SCALE,2"
+				# "XCURSOR_SIZE,24"
+				# "GDK_SCALE,2"
 				"NIXOS_OZONE_WL,1"
 			];
 
