@@ -4,32 +4,158 @@
   programs.waybar = {
     enable = true;
     settings = {
-  mainBar = {
-    layer = "top";
-    position = "top";
-    height = 30;
-    output = [
-      "eDP-1"
-      "HDMI-A-1"
-    ];
-    modules-left = [ "sway/workspaces" "sway/mode" "wlr/taskbar" ];
-    modules-center = [ "sway/window" "custom/hello-from-waybar" ];
-    modules-right = [ "mpd" "custom/mymodule#with-css-id" "temperature" ];
-
-    "sway/workspaces" = {
-      disable-scroll = true;
-      all-outputs = true;
+      margin = "20 20 0 20";
+      "modules-left" = [
+          "sway/workspaces"
+          "sway/language"
+          "keyboard-state"
+          "custom/pacman"
+          "custom/mail"
+          "sway/mode"
+      ];
+      "modules-center" = [
+          "clock"
+          "custom/weather"
+      ];
+      "modules-right" = [
+          "pulseaudio"
+          "custom/mem"
+          "backlight"
+          "battery"
+          "tray"
+      ];
+      "sway/workspaces" = {
+          "disable-scroll" = true;
+          "persistent_workspaces" = {
+              "1" = [];
+              "2" = [];
+              "3" = [];
+              "4" = [];
+          };
+      };
+      "sway/language" = {
+          "format" = "{} ";
+          "min-length" = 5;
+          "tooltip" = false;
+      };
+      "keyboard-state" = {
+          "capslock" = true;
+          "format" = "{name} {icon} ";
+          "format-icons" = {
+              "locked" = " ";
+              "unlocked" = "";
+          };
+      };
+      "custom/pacman" = {
+          "format" = "{} ";
+          "signal" = 8;
+          "tooltip" = false;
+      };
+      "custom/mail" = {
+          "format" = "{} ";
+          "exec" = "$HOME/.config/waybar/scripts/checkgmail.py";
+          "interval" = 120;
+          "signal" = 9;
+          "tooltip" = false;
+      };
+      "sway/mode" = {
+          "format" = "<span style=\"italic\">{}</span>";
+      };
+      "clock" = {
+          "tooltip-format" = "<big>{ =%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+          "format" = "{ =%a %d %b %I =%M %p}";
+      };
+      "custom/weather" = {
+          "format" = "{}";
+          "tooltip" = true;
+          "interval" = 1800;
+          "exec" = "$HOME/.config/waybar/scripts/wttr.py";
+          "return-type" = "json";
+      };
+      "pulseaudio" = {
+          "reverse-scrolling" = 1;
+          "format" = "{volume}% {icon} {format_source}";
+          "format-bluetooth" = "{volume}% {icon} {format_source}";
+          "format-bluetooth-muted" = " {icon} {format_source}";
+          "format-muted" = "婢 {format_source}";
+          "format-source" = "{volume}% ";
+          "format-source-muted" = "";
+          "format-icons" = {
+              "headphone" = "";
+              "hands-free" = "";
+              "headset" = "";
+              "phone" = "";
+              "portable" = "";
+              "car" = "";
+              "default" = [
+                  "奄"
+                  "奔"
+                  "墳"
+              ];
+          };
+          "on-click" = "pavucontrol";
+          "min-length" = 13;
+      };
+      "custom/mem" = {
+          "format" = "{} ";
+          "interval" = 3;
+          "exec" = "free -h | awk '/Mem =/{printf $3}'";
+          "tooltip" = false;
+      };
+      "temperature" = {
+          "critical-threshold" = 80;
+          "format" = "{temperatureC}°C {icon}";
+          "format-icons" = [
+              ""
+              ""
+              ""
+              ""
+              ""
+          ];
+          "tooltip" = false;
+      };
+      "backlight" = {
+          "device" = "intel_backlight";
+          "format" = "{percent}% {icon}";
+          "format-icons" = [
+              ""
+              ""
+              ""
+              ""
+              ""
+              ""
+              ""
+          ];
+          "min-length" = 7;
+      };
+      "battery" = {
+          "states" = {
+              "warning" = 30;
+              "critical" = 15;
+          };
+          "format" = "{capacity}% {icon}";
+          "format-charging" = "{capacity}% ";
+          "format-plugged" = "{capacity}% ";
+          "format-alt" = "{time} {icon}";
+          "format-icons" = [
+              ""
+              ""
+              ""
+              ""
+              ""
+              ""
+              ""
+              ""
+              ""
+              ""
+          ];
+          "on-update" = "$HOME/.config/waybar/scripts/check_battery.sh";
+      };
+      "tray" = {
+          "icon-size" = 16;
+          "spacing" = 0;
+      };
     };
-    "custom/hello-from-waybar" = {
-      format = "hello {}";
-      max-length = 40;
-      interval = "once";
-      exec = pkgs.writeShellScript "hello-from-waybar" ''
-        echo "from within waybar"
-      '';
-    };
-  };
-};
     style = ''
       * {
           border: none;
