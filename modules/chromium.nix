@@ -9,4 +9,8 @@ in
     package = wrappWithNixGL pkgs pkgs.ungoogled-chromium;
     # programs.chromium.extensions
   };
+
+  home.packages = [
+    pkgs.widevine-cdm
+  ];
 }
