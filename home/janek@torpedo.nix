@@ -8,6 +8,7 @@ in
     ../modules/kitty.nix
     ../modules/zellij
     ../modules/hyprland.nix
+    ../modules/chromium.nix
     ./common.nix
   ];
 
@@ -39,7 +40,6 @@ in
       zip
       gzip
       firefox
-      ungoogled-chromium
       blender
       gimp
       inkscape-with-extensions
