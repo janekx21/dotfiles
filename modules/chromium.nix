@@ -6,11 +6,16 @@ in
 {
   programs.chromium = {
     enable = true;
-    package = wrappWithNixGL pkgs pkgs.ungoogled-chromium;
+    package = wrappWithNixGL pkgs pkgs.chromium;
     # programs.chromium.extensions
   };
 
-  home.packages = [
-    pkgs.widevine-cdm
-  ];
+  nixpkgs.config = {
+     chromium = {
+      enableWideVine = true;
+      gnomeKeyringSupport = true;
+      ungoogled = true;
+      # commandLineArgs = 
+    };
+  };
 }
