@@ -6,12 +6,12 @@
     settings = {
       layer = "top";
       position = "top";
-      height = "35";
-      spacing = "4";
-      margin-top = "10";
-      margin-bottom = "0";
-      margin-left = "10";
-      margin-right = "10";
+      height = 35.0;
+      spacing = 4;
+      margin-top = 10;
+      margin-bottom = 0;
+      margin-left = 10;
+      margin-right = 10;
       # Choose the order of the modules
       modules-left = [
         "custom/launcher"
