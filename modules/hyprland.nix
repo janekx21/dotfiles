@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, config, ... }:
 let
 	# waybar
 	# nwg-dock-hyprland
@@ -26,6 +26,14 @@ let
 	];
 in
 {
+	imports = [
+		./waybar
+	];
+
+  home.packages = with pkgs; [
+		vimix-cursors
+	];
+
   wayland.windowManager.hyprland = {
     enable = true;
     package = lib.mkForce (lib.makeOverridable ({enableXWayland, enableNvidiaPatches}: wrappWithNixGL pkgs pkgs.hyprland) {enableXWayland = true; enableNvidiaPatches = false;});
@@ -37,12 +45,12 @@ in
 				"swww init"
 				"/usr/lib/polkit-kde-authentication-agent-1"
 				"hyprctl setcursor Vimix-cursors 24"
-				"xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2" # By default, the Nix package includes a patched wlroots that can render HiDPI XWayland windows.
+				# "xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2" # By default, the Nix package includes a patched wlroots that can render HiDPI XWayland windows.
 			];
 			env = [
 				"QT_QPA_PLATFORMTHEME,qt5ct"
-				"XCURSOR_SIZE,24"
-				"GDK_SCALE,2"
+				# "XCURSOR_SIZE,24"
+				# "GDK_SCALE,2"
 				"NIXOS_OZONE_WL,1"
 			];
 
@@ -63,7 +71,7 @@ in
 		    sensitivity = 0.1; # -1.0 - 1.0, 0 means no modification.
 		    accel_profile = "flat";
       };
-			gestures.workspace_swip = true;
+			# gestures.workspace_swip = true;
 
 			# Style stuff
       general = {
@@ -115,12 +123,12 @@ in
 			"$mod" = "SUPER";
       bind = [
 				# User shortcuts
-        "$mod, Q, exec, kitty"
-        "$mod, W, exec, chromium --ozone-platform-hint=auto"
-        "$mod, E, exec, nautilus -w"
-        "$mod, X, exec, /opt/Rambox/rambox --no-sandbox"
-				"$mod, u, exec, kitty sh -c change"
-        "$mod, R, exec, wofi --show drun"
+        "$mod, Q, exec, ${config.programs.kitty.package}/bin/kitty"
+        "$mod, W, exec, ${config.programs.chromium.package}/bin/chromium --ozone-platform-hint=auto"
+        "$mod, E, exec, ${pkgs.gnome.nautilus}/bin/nautilus -w"
+        # "$mod, X, exec, ${pkgs.rambox}/bin/rambox --no-sandbox"
+				"$mod, u, exec, ${config.programs.kitty.package}/bin/kitty ~/Git/dotfiles/change.bash"
+        "$mod, R, exec, ${config.programs.rofi.package}/bin/rofi -show drun"
 
 				# System shortcuts
         "$mod, C, killactive,"
@@ -215,3 +223,35 @@ in
     };
   };
 }
+
+# https://wiki.hyprland.org/Nix/Hyprland-on-Home-Manager
+# https://github.com/hyprwm/contrib
+
+
+# # home.nix
+# {
+#   wayland.windowManager.hyprland.settings = {
+#     "$mod" = "SUPER";
+#     bind =
+#       [
+#         "$mod, F, exec, firefox"
+#         ", Print, exec, grimblast copy area"
+#       ]
+#       ++ (
+#         # workspaces
+#         # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
+#         builtins.concatLists (builtins.genList (
+#             x: let
+#               ws = let
+#                 c = (x + 1) / 10;
+#               in
+#                 builtins.toString (x + 1 - (c * 10));
+#             in [
+#               "$mod, ${ws}, workspace, ${toString (x + 1)}"
+#               "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+#             ]
+#           )
+#           10)
+#       );
+#   };
+# }

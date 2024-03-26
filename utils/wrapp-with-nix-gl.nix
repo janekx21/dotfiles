@@ -12,7 +12,7 @@ pkgs: pkg:
   mkdir $out/bin
   # We create the bin folder ourselves and link every binary in it
   ln -s ${pkg}/bin/* $out/bin
-  # Except fot the program binary
+  # Except for the program binary
   rm $out/bin/$program
 
   makeWrapper "${pkgs.nixgl.nixGLIntel}/bin/nixGLIntel" "$out/bin/$program" \
