@@ -4,30 +4,208 @@
   programs.waybar = {
     enable = true;
     settings = {
-      mainBar = {
-        layer = "top";
-        position = "top";
-        height = 24;
-        # output = [
-        #   "eDP-1"
-        #   "HDMI-A-1"
-        # ];
-        modules-left = [ "sway/workspaces" "sway/mode" "wlr/taskbar" ];
-        modules-center = [ "sway/window" "custom/hello-from-waybar" ];
-        modules-right = [ "mpd" "custom/mymodule#with-css-id" "temperature" ];
-
-        "sway/workspaces" = {
-          disable-scroll = true;
-          all-outputs = true;
+      layer = "top";
+      position = "top";
+      height = 35;
+      spacing = 4;
+      margin-top = 10;
+      margin-bottom = 0;
+      margin-left = 10;
+      margin-right = 10;
+      # Choose the order of the modules
+      modules-left = [
+        "custom/launcher"
+        "pulseaudio"
+        "backlight"
+        "cpu"
+        "memory"
+        "temperature"
+        # "idle_inhibitor"
+        "hyprland/workspaces"
+      ];
+      modules-center = [
+        "wlr/taskbar"
+      ];
+      modules-right = [
+        # "custom/layout"
+        "custom/media"
+        # "custom/updater"
+        # "custom/snip"
+        "keyboard-state"
+        # "battery#bat2"
+        "network"
+        "battery"
+        # "tray"
+        "clock"
+        "custom/power"
+      ];
+      # Modules configuration
+      "hyprland/workspaces" = {
+        # format = "{icon}";
+        # format-icons = {
+        #   1 = "";
+        #   2 = "";
+        #   3 = "";
+        #   4 = "";
+        #   5 = "";
+        #   # active = "";
+        #   # default = ""
+        # };
+        sort-by-number = true;
+        on-scroll-up = "hyprctl dispatch workspace e+1";
+        on-scroll-down = "hyprctl dispatch workspace e-1";
+        on-click = "activate";
+      };
+      keyboard-state = {
+        numlock = true;
+        capslock = true;
+        format = " {name} {icon}";
+        format-icons = {
+          locked = "";
+          unlocked = "";
         };
-        "custom/hello-from-waybar" = {
-          format = "hello {}";
-          max-length = 40;
-          interval = "once";
-          exec = pkgs.writeShellScript "hello-from-waybar" ''
-            echo "from within waybar"
-          '';
+      };
+      "wlr/taskbar" = {
+        format = "{icon}";
+        icon-size = 20;
+        icon-theme = "Star";
+        tooltip-format = "{title}";
+        on-click = "activate";
+        # on-click-middle = "close"
+        # on-click-right = "activate"
+      };
+      # "sway/language" = {
+      #   format = " {}"
+      # };
+      idle_inhibitor = {
+        format = "{icon}";
+        format-icons = {
+          activated = "";
+          deactivated = "";
         };
+      };
+      tray = {
+        icon-size = 20;
+        spacing = 10;
+      };
+      clock = {
+        # timezone = "America/New_York";
+        format = "{ =%H =%M      %d.%m  }";
+        tooltip-format = "{calendar}";
+        # format-alt = "{ =%d.%m.%Y}"
+      };
+      cpu = {
+        format = "{usage}% ";
+        # tooltip = false
+      };
+      memory = {
+        format = "{}% ";
+      };
+      temperature = {
+        # thermal-zone = 2;
+        # hwmon-path = "/sys/class/hwmon/hwmon2/temp1_input";
+        critical-threshold = 80;
+        # format-critical = "{temperatureC}°C {icon}";
+        format = "{temperatureC}°C {icon}";
+        format-icons = [
+          ""
+          ""
+          ""
+        ];
+      };
+      backlight = {
+        # TODO backlight keys do not work
+        format = "{percent}% {icon}";
+        format-icons = [
+          ""
+          ""
+        ];
+      };
+      battery = {
+        states = {
+          # good = 95
+          warning = 30;
+          critical = 15;
+        };
+        format = "{capacity}% {icon}";
+        format-charging = "{capacity}% ";
+        format-plugged = "{capacity}% ";
+        format-alt = "{time} {icon}";
+        format-icons = [
+          ""
+          ""
+          ""
+          ""
+          ""
+        ];
+      };
+      # battery#bat2 = {
+      #   bat = "BAT2"
+      # };
+      network = {
+        # interface = "wlp2*"; # (Optional) To force the use of this interface
+        format-wifi = "{essid} ({signalStrength}%) ";
+        format-ethernet = "Connected  ";
+        tooltip-format = "{ifname} via {gwaddr} ";
+        format-linked = "{ifname} (No IP) ";
+        format-disconnected = "Disconnected ⚠";
+        format-alt = "{ifname} = {ipaddr}/{cidr}";
+        on-click-right = "bash ~/.config/rofi/wifi_menu/rofi_wifi_menu";
+      };
+      pulseaudio = {
+        format = "{volume}% {icon}";
+        format-bluetooth = "{volume}% {icon}";
+        format-bluetooth-muted = "{icon} {format_source}";
+        format-muted = "{format_source}";
+        format-source = "";
+        format-source-muted = "";
+        format-icons = {
+          headphone = "";
+          hands-free = "";
+          headset = "";
+          phone = "";
+          portable = "";
+          car = "";
+          default = [
+            ""
+            ""
+            ""
+          ];
+        };
+        on-click = "pavucontrol";
+      };
+      "custom/media" = {
+        format = "{icon} {}";
+        return-type = "json";
+        max-length = 15;
+        format-icons = {
+          spotify = " ";
+          default = " ";
+        };
+        escape = true;
+        exec = "$HOME/.config/system_scripts/mediaplayer.py 2> /dev/null";
+        on-click = "playerctl play-pause";
+      };
+      "custom/launcher" = {
+        format = "";
+        on-click = "wofi --show drun";
+        on-click-right = "killall wofi";
+      };
+      "custom/power" = {
+        format = " ";
+        on-click = "nwg-bar";
+        on-click-right = "killall nwg-bar";
+      };
+      # "custom/layout" = {
+      #   format = "";
+      #   on-click = "bash ~/.config/system_scripts/layout.sh"
+      # };
+      "custom/updater" = {
+        format = "  {} Updates";
+        exec = "checkupdates | wc -l";
+        exec-if = "[[ $(checkupdates | wc -l) != 0 ]]";
+        interval = 15;
+        on-click = "kitty -e yay -Syu";
       };
     };
     style = ''
