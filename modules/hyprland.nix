@@ -41,10 +41,10 @@ in
     theme = {
       name = "Catppuccin-Macchiato-Compact-Pink-Dark";
       package = pkgs.catppuccin-gtk.override {
-        accents = [ "pink" ];
+        accents = [ "green" ];
         size = "compact";
-        tweaks = [ "rimless" "black" ];
-        variant = "macchiato";
+        tweaks = [ "rimless" "normal" ];
+        variant = "frappe";
       };
     };
   };
