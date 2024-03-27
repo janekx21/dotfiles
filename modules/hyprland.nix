@@ -40,12 +40,13 @@ in
     enable = true;
     theme = {
       name = "Catppuccin-Macchiato-Compact-Pink-Dark";
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "green" ];
-        size = "compact";
-        tweaks = [ "rimless" "normal" ];
-        variant = "frappe";
-      };
+      package = pkgs.catppuccin-gtk;
+			# .override {
+   #      accents = [ "green" ];
+   #      size = "compact";
+   #      tweaks = [ "rimless" "normal" ];
+   #      variant = "frappe";
+   #    };
     };
   };
 
