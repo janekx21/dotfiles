@@ -34,7 +34,7 @@ in
 		vimix-cursors
 	];
 
-	config.programs.rofi.package = pkgs.rofi-wayland;
+	programs.rofi.package = pkgs.rofi-wayland;
 
   wayland.windowManager.hyprland = {
     enable = true;
