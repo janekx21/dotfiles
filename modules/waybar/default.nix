@@ -2,7 +2,7 @@
 
 {
   xdg.configFile.waybar = {
-    source = ../dot_config/waybar;
+    source = ./dot_config;
     recursive = true;
   };
   programs.waybar = {
