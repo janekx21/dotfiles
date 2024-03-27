@@ -128,7 +128,7 @@ in
         "$mod, E, exec, ${pkgs.gnome.nautilus}/bin/nautilus -w"
         # "$mod, X, exec, ${pkgs.rambox}/bin/rambox --no-sandbox"
 				"$mod, u, exec, ${config.programs.kitty.package}/bin/kitty ~/Git/dotfiles/change.bash"
-        "$mod, R, exec, ${config.programs.rofi.package}/bin/rofi -show drun"
+        "$mod, R, exec, ${config.programs.rofi-wayland.package}/bin/rofi -show drun"
 
 				# System shortcuts
         "$mod, C, killactive,"
