@@ -35,6 +35,8 @@
       nwg-look
       pomodoro
       glow
+
+      gotot_4
 	  ];
 	};
 
