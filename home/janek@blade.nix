@@ -36,7 +36,7 @@
       pomodoro
       glow
 
-      gotot_4
+      godot_4
 	  ];
 	};
 
