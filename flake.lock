@@ -201,8 +201,9 @@
         "type": "github"
       },
       "original": {
-        "id": "helix",
-        "type": "indirect"
+        "owner": "helix-editor",
+        "repo": "helix",
+        "type": "github"
       }
     },
     "home-manager": {
