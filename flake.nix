@@ -1,6 +1,12 @@
 {
   description = "Nix configs of Janek";
 
+  nixConfig = {
+    extra-substituters = [ "https://cache.nixos.org/" ];
+    extra-trusted-public-keys =
+      [ "jost-s.cachix.org-1:MJaFoUZA8dZ+v4zO8dLQd9D154zUWBwOUtEw0W26GL8=" ];
+  };
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
@@ -18,7 +24,7 @@
 
     helix = {
       url = "github:helix-editor/helix";
-      # inputs.helix.follows = "nixpkgs";
+      inputs.helix.follows = "nixpkgs";
     };
   };
 
