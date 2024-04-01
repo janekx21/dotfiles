@@ -114,7 +114,7 @@
           auto-format = true;
           bufferline = "multiple";
           cursorline = true;
-          color-modes = true;
+          # color-modes = true;
           cursor-shape = {
             insert = "bar";
             normal = "block";
