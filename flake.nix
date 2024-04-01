@@ -16,7 +16,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    helix.url = "github:helix-editor/helix";
+    helix = {
+      url = "github:helix-editor/helix";
+      inputs.helix.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ { nixpkgs, home-manager, nixgl, helix, ... }:
