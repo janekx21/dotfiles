@@ -16,10 +16,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # helix = {
-    #   url = "github:helix-editor/helix";
-    #   # inputs.helix.follows = "nixpkgs";
-    # };
+    helix = {
+      url = "github:helix-editor/helix";
+      # inputs.helix.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ { nixpkgs, home-manager, nixgl, helix, ... }:
@@ -27,7 +27,7 @@
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
-        overlays = [ nixgl.overlay ];
+        overlays = [ nixgl.overlay helix.overlays.default ];
   			config.allowUnfree = true;
         config.permittedInsecurePackages = [
           "electron-19.1.9"
