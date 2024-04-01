@@ -106,6 +106,7 @@
 	  helix = {
       enable = true;
       defaultEditor = true;
+      package = inputs.helix.package;
       settings = {
         theme = "gruvbox_dark_hard";
         editor = {

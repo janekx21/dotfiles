@@ -24,7 +24,7 @@
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
-        overlays = [ nixgl.overlay helix.overlay ];
+        overlays = [ nixgl.overlay ];
   			config.allowUnfree = true;
         config.permittedInsecurePackages = [
           "electron-19.1.9"
