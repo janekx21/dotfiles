@@ -19,12 +19,12 @@
     helix.url = "github:helix-editor/helix";
   };
 
-  outputs = inputs @ { nixpkgs, home-manager, nixgl, ... }:
+  outputs = inputs @ { nixpkgs, home-manager, nixgl, helix, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
-        overlays = [ nixgl.overlay ];
+        overlays = [ nixgl.overlay helix.overlay ];
   			config.allowUnfree = true;
         config.permittedInsecurePackages = [
           "electron-19.1.9"
