@@ -106,7 +106,7 @@
 	  helix = {
       enable = true;
       defaultEditor = true;
-      package = inputs.helix.packages.x86_64-linux.default;
+      # package = inputs.helix.packages.x86_64-linux.default;
       settings = {
         theme = "gruvbox_dark_hard";
         editor = {
