@@ -94,7 +94,7 @@ in
 		    sensitivity = 0.1; # -1.0 - 1.0, 0 means no modification.
 		    accel_profile = "flat";
       };
-			# gestures.workspace_swip = true;
+			gestures.workspace_swipe = true;
 
 			# Style stuff
       general = {
