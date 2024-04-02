@@ -214,17 +214,18 @@ in
 
   targets.genericLinux.enable=true;
 
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Orchis-Dark";
-      package = pkgs.orchis-theme;
-    };
-    iconTheme = {
-      name = "Tela-dark";
-      package = pkgs.tela-icon-theme;
-    };
-  };
+  # TODO move to hyprland
+  # gtk = {
+  #   enable = true;
+  #   theme = {
+  #     name = "Orchis-Dark";
+  #     package = pkgs.orchis-theme;
+  #   };
+  #   iconTheme = {
+  #     name = "Tela-dark";
+  #     package = pkgs.tela-icon-theme;
+  #   };
+  # };
 
 
   programs.zoxide.enable = true;
