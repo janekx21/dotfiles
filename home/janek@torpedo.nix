@@ -29,6 +29,13 @@ in
     imageDirectory = "%h/Pictures/Backgrounds";
   };
 
+  wayland.windowManager.hyprland.settings = {
+    monitor = [
+      "eDP-1,preferred,auto,1"
+      ",preferred,auto,auto"
+    ];
+  };
+
   home.packages = with pkgs; [
       # NIX
       cachix
@@ -214,18 +221,17 @@ in
 
   targets.genericLinux.enable=true;
 
-  # TODO move to hyprland
-  # gtk = {
-  #   enable = true;
-  #   theme = {
-  #     name = "Orchis-Dark";
-  #     package = pkgs.orchis-theme;
-  #   };
-  #   iconTheme = {
-  #     name = "Tela-dark";
-  #     package = pkgs.tela-icon-theme;
-  #   };
-  # };
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Orchis-Dark";
+      package = pkgs.orchis-theme;
+    };
+    iconTheme = {
+      name = "Tela-dark";
+      package = pkgs.tela-icon-theme;
+    };
+  };
 
 
   programs.zoxide.enable = true;

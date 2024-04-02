@@ -12,18 +12,13 @@ let
   # hyprpicker
   wrappWithNixGL = import ../utils/wrapp-with-nix-gl.nix;
 
-	# // TODO
-	torpedo_monitor = [
-    "eDP-1,preferred,auto,1"
-    ",preferred,auto,auto"
-  ];
-
-	blade_moditor = [
-		"eDP-1,highres,0x1080,1.6 # buildin display"
-		"DP-1,preferred,0x0,auto"
-		"DP-3,preferred,1920x0,auto"
-		",preferred,auto,auto"
-	];
+	# TODO move to blade
+	# blade_moditor = [
+	# 	"eDP-1,highres,0x1080,1.6 # buildin display"
+	# 	"DP-1,preferred,0x0,auto"
+	# 	"DP-3,preferred,1920x0,auto"
+	# 	",preferred,auto,auto"
+	# ];
 in
 {
 	imports = [
@@ -36,19 +31,20 @@ in
 
 	programs.rofi.package = pkgs.rofi-wayland;
 
-	gtk = {
-    enable = true;
-    theme = {
-      name = "Catppuccin-Macchiato-Compact-Pink-Dark";
-      package = pkgs.catppuccin-gtk;
-			# .override {
-   #      accents = [ "green" ];
-   #      size = "compact";
-   #      tweaks = [ "rimless" "normal" ];
-   #      variant = "frappe";
-   #    };
-    };
-  };
+	# TODO move to blade
+	# gtk = {
+ #    enable = true;
+ #    theme = {
+ #      name = "Catppuccin-Macchiato-Compact-Pink-Dark";
+ #      package = pkgs.catppuccin-gtk;
+	# 		# .override {
+ #   #      accents = [ "green" ];
+ #   #      size = "compact";
+ #   #      tweaks = [ "rimless" "normal" ];
+ #   #      variant = "frappe";
+ #   #    };
+ #    };
+ #  };
 
 	# Now symlink the `~/.config/gtk-4.0/` folder declaratively:
 	xdg.configFile = {
@@ -61,7 +57,7 @@ in
     enable = true;
     package = lib.mkForce (lib.makeOverridable ({enableXWayland, enableNvidiaPatches}: wrappWithNixGL pkgs pkgs.hyprland) {enableXWayland = true; enableNvidiaPatches = false;});
     settings = {
-      monitor = blade_moditor;
+      # monitor = blade_moditor;
 			exec-once = [
 				"waybar"
 				"nwg-dock-hyprland -d"
