@@ -9,6 +9,7 @@ in
     ../modules/zellij
     ../modules/hyprland.nix
     ../modules/chromium.nix
+    ../modules/waybar
     ./common.nix
   ];
 
