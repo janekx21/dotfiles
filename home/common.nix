@@ -46,7 +46,7 @@ in
 
   home.keyboard = {
     layout = "de";
-    variant = "neo-qwertz";
+    variant = "neo_qwertz";
   };
 
   programs = {
