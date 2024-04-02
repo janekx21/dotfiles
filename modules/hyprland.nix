@@ -67,6 +67,8 @@ in
 				"/usr/lib/polkit-kde-authentication-agent-1"
 				"hyprctl setcursor Vimix-cursors 24"
 				# "xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2" # By default, the Nix package includes a patched wlroots that can render HiDPI XWayland windows.
+
+				"${pkgs.hypridle}/bin/hypridle"
 			];
 			env = [
 				"QT_QPA_PLATFORMTHEME,qt5ct"
@@ -102,6 +104,9 @@ in
         "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
 		    layout = "dwindle";
+				"lock_cmd" = "pidof hyprlock || |${pkgs.hyprlock}/bin/hyprlock";
+				before_sleep_cmd = "loginctl lock-session";
+				after_sleep_cmd = "hyprctl dispatch dpms on";
       };
       decoration = {
         rounding = 12;
