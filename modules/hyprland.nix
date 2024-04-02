@@ -19,6 +19,8 @@ let
 	# 	"DP-3,preferred,1920x0,auto"
 	# 	",preferred,auto,auto"
 	# ];
+	pamixer = /${config.programs.pamixer.package}/bin/pamixer;
+	brightnessctl = /${config.programs.brightnessctl.package}/bin/brightnessctl;
 in
 {
 	imports = [
@@ -229,10 +231,7 @@ in
 			];
 
 			bindle = 
-			let
-				pamixer = /${config.programs.pamixer.package}/bin/pamixer;
-				brightnessctl = /${config.programs.brightnessctl.package}/bin/brightnessctl;
-			in [
+			[
 				# Volume
 				", XF86AudioRaiseVolume, exec, ${pamixer} -i 5 "
 				", XF86AudioLowerVolume, exec, ${pamixer} -d 5 "
