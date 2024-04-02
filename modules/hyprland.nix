@@ -19,8 +19,8 @@ let
 	# 	"DP-3,preferred,1920x0,auto"
 	# 	",preferred,auto,auto"
 	# ];
-	pamixer = /${pkgs.pamixer.package}/bin/pamixer;
-	brightnessctl = /${pkgs.brightnessctl.package}/bin/brightnessctl;
+	pamixer = /${pkgs.pamixer}/bin/pamixer;
+	brightnessctl = /${pkgs.brightnessctl}/bin/brightnessctl;
 in
 {
 	imports = [
