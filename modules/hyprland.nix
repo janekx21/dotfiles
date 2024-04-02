@@ -104,9 +104,6 @@ in
         "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
 		    layout = "dwindle";
-				"lock_cmd" = "pidof hyprlock || |${pkgs.hyprlock}/bin/hyprlock";
-				before_sleep_cmd = "loginctl lock-session";
-				after_sleep_cmd = "hyprctl dispatch dpms on";
       };
       decoration = {
         rounding = 12;
@@ -251,6 +248,19 @@ in
 			};
     };
   };
+
+	# https://wiki.hyprland.org/Hypr-Ecosystem/hypridle/
+  xdg.configFile."hypr/hypridle.conf".text = ''
+		general {
+		    lock_cmd = pidof hyprlock || ${pkgs.hyprlock}/bin/hyprlock		    before_sleep_cmd = loginctl lock-session
+		    after_sleep_cmd = hyprctl dispatch dpms on
+		}
+
+		listener {
+		    timeout = 300                                 # 5min
+		    on-timeout = loginctl lock-session            # lock screen when timeout has passed
+		}
+  '';
 }
 
 # https://wiki.hyprland.org/Nix/Hyprland-on-Home-Manager
