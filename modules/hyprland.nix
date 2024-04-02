@@ -61,7 +61,7 @@ in
     settings = {
       # monitor = blade_moditor;
 			exec-once = [
-				"waybar"
+				"${config.programs.waybar.package}/bin/waybar"
 				"nwg-dock-hyprland -d"
 				"swww init"
 				"/usr/lib/polkit-kde-authentication-agent-1"
