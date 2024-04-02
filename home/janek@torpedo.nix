@@ -31,7 +31,7 @@ in
 
   wayland.windowManager.hyprland.settings = {
     monitor = [
-      "eDP-1,preferred,auto,1.4"
+      "eDP-1,preferred,auto,1.333333"
       ",preferred,auto,auto"
     ];
   };
