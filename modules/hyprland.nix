@@ -141,13 +141,16 @@ in
 			# Binds
 			"$mod" = "SUPER";
       bind = [
-				# User shortcuts
+				# User Programs
         "$mod, Q, exec, ${config.programs.kitty.package}/bin/kitty"
         "$mod, W, exec, ${config.programs.chromium.package}/bin/chromium --ozone-platform-hint=auto"
         "$mod, E, exec, ${pkgs.gnome.nautilus}/bin/nautilus -w"
         # "$mod, X, exec, ${pkgs.rambox}/bin/rambox --no-sandbox"
 				"$mod, u, exec, ${config.programs.kitty.package}/bin/kitty ~/Git/dotfiles/change.bash"
-        "$mod, R, exec, ${config.programs.rofi.package}/bin/rofi -show drun"
+        "$mod, R, exec, ${config.programs.rofi.package}/bin/rofi -show run"
+
+				# System Programs
+				"$mod SHIFT, L, exec, ${config.programs.swaylock.package}/bin/swaylock --daemonize --show-failed-attempts -color 000000"
 
 				# System shortcuts
         "$mod, C, killactive,"
@@ -155,7 +158,6 @@ in
 				"$mod, T, togglesplit, "# dwindle
 				"$mod, F, fullscreen,"
 				"$mod, S, swapactiveworkspaces, 1 2"
-				"$mod SHIFT, L, exec, swaylock -f -c 000000"
 				"$mod, m, exit, "
 
 				# Alt tab cycling
@@ -226,14 +228,18 @@ in
 				", XF86AudioPrev, exec, playerctl previous"
 			];
 
-			bindle = [
+			bindle = 
+			let
+				pamixer = /${config.programs.pamixer.package}/bin/pamixer;
+				brightnessctl = /${config.programs.brightnessctl.package}/bin/brightnessctl;
+			in [
 				# Volume
-				", XF86AudioRaiseVolume, exec, pamixer -i 5 "
-				", XF86AudioLowerVolume, exec, pamixer -d 5 "
+				", XF86AudioRaiseVolume, exec, ${pamixer} -i 5 "
+				", XF86AudioLowerVolume, exec, ${pamixer} -d 5 "
 				
 				# Screen brightness
-				", XF86MonBrightnessUp, exec, brightnessctl set +5%"
-				", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+				", XF86MonBrightnessUp, exec, ${brightnessctl} set +5%"
+				", XF86MonBrightnessDown, exec, ${brightnessctl} set 5%-"
 			];
 
 			misc = {
