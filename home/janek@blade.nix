@@ -42,7 +42,7 @@
 	};
 
   wayland.windowManager.hyprland.settings = {
-	  moditor = [
+	  monitor = [
   		"eDP-1,highres,0x1080,1.6 # buildin display"
   		"DP-1,preferred,0x0,auto"
   		"DP-3,preferred,1920x0,auto"
