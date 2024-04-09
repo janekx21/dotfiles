@@ -1,6 +1,6 @@
 pkgs: pkg:
 (pkgs.runCommand "wrapped-${pkg.meta.mainProgram}" {
-  buildInputs = [pkgs.makeWrapper];
+  nativeBuildInputs = [pkgs.makeWrapper];
   program = pkg.meta.mainProgram;
   original = pkg;
 } ''
