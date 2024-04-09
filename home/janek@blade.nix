@@ -37,6 +37,7 @@
       glow
 
       godot_4
+      discord
 	  ];
 	};
 
