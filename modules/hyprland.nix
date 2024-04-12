@@ -148,7 +148,7 @@ in
 				# User Programs
         "$mod, Q, exec, ${config.programs.kitty.package}/bin/kitty"
         # "$mod, W, exec, ${config.programs.chromium.package}/bin/chromium --ozone-platform-hint=auto"
-        "$mod, W, exec, chromium --ozone-platform-hint=auto"
+        "$mod, W, exec, chromium"
         "$mod, E, exec, ${pkgs.gnome.nautilus}/bin/nautilus -w"
         # "$mod, X, exec, ${pkgs.rambox}/bin/rambox --no-sandbox"
 				"$mod, u, exec, ${config.programs.kitty.package}/bin/kitty ~/Git/dotfiles/change.bash"
