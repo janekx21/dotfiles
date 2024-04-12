@@ -147,11 +147,12 @@ in
       bind = [
 				# User Programs
         "$mod, Q, exec, ${config.programs.kitty.package}/bin/kitty"
-        "$mod, W, exec, ${config.programs.chromium.package}/bin/chromium --ozone-platform-hint=auto"
+        # "$mod, W, exec, ${config.programs.chromium.package}/bin/chromium --ozone-platform-hint=auto"
+        "$mod, W, exec, chromium --ozone-platform-hint=auto"
         "$mod, E, exec, ${pkgs.gnome.nautilus}/bin/nautilus -w"
         # "$mod, X, exec, ${pkgs.rambox}/bin/rambox --no-sandbox"
 				"$mod, u, exec, ${config.programs.kitty.package}/bin/kitty ~/Git/dotfiles/change.bash"
-        "$mod, R, exec, ${config.programs.rofi.package}/bin/rofi -show run"
+        "$mod, R, exec, ${config.programs.rofi.package}/bin/rofi -show drun"
 
 				# System Programs
 				"$mod SHIFT, L, exec, ${config.programs.swaylock.package}/bin/swaylock --daemonize --show-failed-attempts -color 000000"

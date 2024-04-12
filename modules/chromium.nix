@@ -10,10 +10,18 @@ in
     # programs.chromium.extensions
   };
 
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   nixpkgs.config = {
      chromium = {
       enableWideVine = true;
-      # gnomeKeyringSupport = true;
+      commandLineArgs = ''
+        --enable-features=TouchpadOverscrollHistoryNavigation
+      '';
+        # --ignore-gpu-blocklist
+        # --enable-zero-copy
+        # --enable-features=VaapiVideoDecodeLinuxGL
+      gnomeKeyringSupport = true;
       # ungoogled = true;
       # commandLineArgs = 
     };
