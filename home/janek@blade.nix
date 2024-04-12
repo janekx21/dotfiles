@@ -297,27 +297,5 @@
 		joshuto = {
 			enable = true;
 		};
-   
-    # chromium.enable = true;
-	  # chromium.package =
-			# let
-		 #    wrapped-chromium =
-		 #      lib.makeOverridable
-		 #      ({commandLineArgs}:
-		 #        pkgs.runCommand "wrapped-chromium" {
-		 #          buildInputs = [pkgs.makeWrapper];
-		 #          chromium = pkgs.ungoogled-chromium;
-		 #        } ''
-		 #          mkdir -p "$out/bin"
-		 #          makeWrapper "${pkgs.nixgl.nixGLIntel}/bin/nixGLIntel" "$out/bin/chromium" \
-		 #            --argv0 chromium \
-		 #            --add-flags "$chromium/bin/chromium" \
-		 #            --add-flags ${lib.escapeShellArg commandLineArgs}
-		 #          ln -s "$out/bin/chromium" "$out/bin/chromium-browser"
-		 #          ln -s "$chromium/share" "$out/share"
-		 #        '')
-		 #      {commandLineArgs = [];};
-		 #  in
-	  #   lib.mkForce wrapped-chromium;
   };
 }
