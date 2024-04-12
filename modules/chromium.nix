@@ -27,7 +27,7 @@ in
 # ]
   };
 
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  home.sessionVariables.NIXOS_OZONE_WL = "1";
 
   nixpkgs.config = {
      chromium = {
