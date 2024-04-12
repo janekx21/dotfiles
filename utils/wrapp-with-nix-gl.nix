@@ -1,4 +1,4 @@
-pkgs: pkg:
+{pkgs, pkg, args ? ""}:
 (pkgs.runCommand "wrapped-${pkg.meta.mainProgram}" {
   buildInputs = [pkgs.makeWrapper];
   program = pkg.meta.mainProgram;
@@ -16,6 +16,7 @@ pkgs: pkg:
   rm $out/bin/$program
 
   makeWrapper "${pkgs.nixgl.nixGLIntel}/bin/nixGLIntel" "$out/bin/$program" \
-    --argv0 $program \
+    --inherit-argv0 \
     --add-flags "$original/bin/$program" \
+    --append-flags ${args} \
 '')

@@ -57,7 +57,8 @@ in
 
   wayland.windowManager.hyprland = {
     enable = true;
-    package = lib.mkForce (lib.makeOverridable ({enableXWayland, enableNvidiaPatches}: wrappWithNixGL pkgs pkgs.hyprland) {enableXWayland = true; enableNvidiaPatches = false;});
+    package = lib.mkForce (lib.makeOverridable ({enableXWayland, enableNvidiaPatches}:
+			wrappWithNixGL {inherit pkgs; pkg = pkgs.hyprland;}) {enableXWayland = true; enableNvidiaPatches = false;});
     settings = {
       # monitor = blade_moditor;
 			exec-once = [

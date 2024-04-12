@@ -11,7 +11,7 @@ in
       name = "JetBrainsMono Nerd Font"; # TODO use nix pkgs
     };
     shellIntegration.enableZshIntegration = true;
-    package = wrappWithNixGL pkgs pkgs.kitty;
+    package = wrappWithNixGL {inherit pkgs; pkg = pkgs.kitty;};
     theme = "Gruvbox Dark Hard";
     settings = {
       background_opacity = "0.95";
