@@ -18,5 +18,5 @@
   makeWrapper "${pkgs.nixgl.nixGLIntel}/bin/nixGLIntel" "$out/bin/$program" \
     --inherit-argv0 \
     --add-flags "$original/bin/$program" \
-    --append-flags ${args} \
+    --append-flags "${args}" \
 '')
