@@ -35,7 +35,7 @@ in
         # --ignore-gpu-blocklist
         # --enable-zero-copy
         # --enable-features=VaapiVideoDecodeLinuxGL
-      gnomeKeyringSupport = true;
+      # gnomeKeyringSupport = true;
       # ungoogled = true;
       # commandLineArgs = 
     };
