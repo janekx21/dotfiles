@@ -4,6 +4,7 @@
     ../modules/kitty.nix
     ../modules/zellij
     ../modules/hyprland.nix
+    ../modules/chromium.nix
     ./common.nix
 		inputs.nixvim.homeManagerModules.nixvim
   ];
