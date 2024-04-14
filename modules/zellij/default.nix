@@ -10,7 +10,9 @@
     recursive = true;
   };
 
-  xdg.configFile."zellij/layouts/helix-ide.kdl".text = ''
+  xdg.configFile."zellij/layouts/helix-ide.kdl".text = 
+    #kdl
+    ''
     layout {
         default_tab_template {
             pane size=1 borderless=true {
