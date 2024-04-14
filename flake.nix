@@ -27,14 +27,23 @@
       url = "github:helix-editor/helix";
       inputs.helix.follows = "nixpkgs";
     };
+
+    zjstatus = {
+      url = "github:dj95/zjstatus";
+    };
   };
 
-  outputs = inputs @ { nixpkgs, home-manager, nixgl, helix, ... }:
+  outputs = inputs @ { nixpkgs, home-manager, nixgl, helix, zjstatus, ... }:
     let
       system = "x86_64-linux";
+
+      zjstatusOverlay = (final: prev: {
+        zjstatus = zjstatus.packages.${prev.system}.default;
+      });
+      
       pkgs = import nixpkgs {
         inherit system;
-        overlays = [ nixgl.overlay helix.overlays.default ];
+        overlays = [ nixgl.overlay helix.overlays.default zjstatusOverlay ];
   			config.allowUnfree = true;
         config.permittedInsecurePackages = [
           "electron-19.1.9"
