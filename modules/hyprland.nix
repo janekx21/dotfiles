@@ -69,7 +69,7 @@ in
 				"hyprctl setcursor Vimix-cursors 24"
 				# "xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2" # By default, the Nix package includes a patched wlroots that can render HiDPI XWayland windows.
 
-				"${pkgs.hypridle}/bin/hypridle"
+				# "${pkgs.hypridle}/bin/hypridle"
 			];
 			env = [
 				"QT_QPA_PLATFORMTHEME,qt5ct"
