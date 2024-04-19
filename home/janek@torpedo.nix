@@ -111,6 +111,7 @@
       gnome.gnome-tweaks
       gnome.gnome-clocks
       gnome.gnome-control-center
+      gnome.nautilus
       gnomeExtensions.extension-list
       # gnomeExtensions.thinkpad-thermal
       # gnomeExtensions.thanatophobia
