@@ -82,7 +82,6 @@
       lazydocker
       joshuto
       plantuml-c4
-      dotnet-sdk
       rustup
       netcoredbg
       nodePackages.vls
