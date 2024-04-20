@@ -71,6 +71,9 @@ in
 
 				# "${pkgs.hypridle}/bin/hypridle"
 			];
+			xwayland = {
+				force_zero_scaling = true;
+			};
 			env = [
 				"QT_QPA_PLATFORMTHEME,qt5ct"
 				# "XCURSOR_SIZE,24"
