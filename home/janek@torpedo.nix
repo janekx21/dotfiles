@@ -452,7 +452,5 @@
 
     "" Comment lines
     map <C-c> <action>(CommentByLineComment)
-
-
   '';
 }
