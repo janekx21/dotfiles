@@ -113,6 +113,9 @@
       gnome.gnome-control-center
       gnome.nautilus
       gnomeExtensions.extension-list
+
+      evolution
+      evolution-ews
       # gnomeExtensions.thinkpad-thermal
       # gnomeExtensions.thanatophobia
       # gnomeExtensions.user-themes
