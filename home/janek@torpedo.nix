@@ -110,12 +110,10 @@
       gnome.gnome-shell-extensions
       gnome.gnome-tweaks
       gnome.gnome-clocks
-      gnome.gnome-control-center
+      # gnome.gnome-control-center
       gnome.nautilus
       gnomeExtensions.extension-list
 
-      evolution
-      evolution-ews
       # gnomeExtensions.thinkpad-thermal
       # gnomeExtensions.thanatophobia
       # gnomeExtensions.user-themes
