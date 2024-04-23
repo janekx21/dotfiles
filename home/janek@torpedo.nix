@@ -113,6 +113,9 @@
       # gnome.gnome-control-center
       gnome.nautilus
       gnomeExtensions.extension-list
+      gnomeExtensions.just-perfection
+      gnomeExtensions.panel-corners
+      gnomeExtensions.blur-my-shell
 
       # gnomeExtensions.thinkpad-thermal
       # gnomeExtensions.thanatophobia
