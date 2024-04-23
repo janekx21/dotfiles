@@ -106,6 +106,7 @@
 
       # DESKTOP
       orchis-theme
+      gnome
       gnome-extension-manager
       gnome.gnome-shell-extensions
       gnome.gnome-tweaks
