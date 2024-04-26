@@ -376,6 +376,23 @@
     envExtra = "bindkey \"^[[3~\" delete-char";
   };
 
+  programs.nushell = {
+    enable = true;
+  };
+
+  programs.starship = {
+    enable = true;
+    enableNushellIntegration = true;
+  };
+  programs.direnv = {
+    enableNushellIntegration = true;
+  };
+  programs.yazi = {
+    enable = true;
+    enableNushellIntegration = true;
+  };
+  programs.zoxide.enableNushellIntegration = true;
+
   # TODO
   # programs.starship = {
   #   enable = true;
