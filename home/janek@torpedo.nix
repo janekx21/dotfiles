@@ -383,9 +383,6 @@
     enable = true;
     enableNushellIntegration = true;
   };
-  programs.direnv = {
-    enableNushellIntegration = true;
-  };
   programs.yazi = {
     enable = true;
     enableNushellIntegration = true;
@@ -430,6 +427,7 @@
     direnv.enableZshIntegration = true;
     direnv.enableBashIntegration = true;
     direnv.nix-direnv.enable = true;
+    direnv.enableNushellIntegration = true;
   };
 
 	xdg.configFile.".ideavimrc".text = 
