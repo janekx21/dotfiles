@@ -377,7 +377,7 @@
 
   programs.nushell = {
     enable = true;
-    shellAliases = config.home.shellAliases;
+    # shellAliases = config.home.shellAliases;
   };
 
   programs.starship = {
