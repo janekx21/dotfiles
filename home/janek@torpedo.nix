@@ -90,7 +90,6 @@
       dotnet-sdk
       docker-compose
       marksman
-      nushell
       # gnome.gnome-boxes
 
       # FONTS
