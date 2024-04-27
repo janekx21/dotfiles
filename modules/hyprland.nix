@@ -136,8 +136,10 @@ in
       };
 			windowrulev2 = [
 				"float,class:org.telegram.desktop,title:^(Telegram)$"
-				"float,class:Rambox,"
-				"tile,class:Godot,"
+				"float,class:Rambox"
+				"tile,class:Godot"
+				"float,title:^(.+)(\.godot)(.+)$"
+				"stayfocused,title:^(.+)(\.godot)(.+)$"
 			];
 
 			# TODO what does this do again?
