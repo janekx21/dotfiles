@@ -240,7 +240,7 @@
             name = "mdx";
             language-servers = ["mdx" "ltex-ls"];
             scope = "source.mdx";
-            block-comment-tokens = { start = "<!--"; end = "-->" ; };
+            # block-comment-tokens = { start = "<!--"; end = "-->" ; };
             indent = { tab-width = 2; unit = "  "; };
             injection-regex = "mdx";
             file-types = ["mdx"];
