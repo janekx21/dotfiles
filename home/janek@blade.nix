@@ -202,6 +202,10 @@
               };
             };
           };
+          mdx = {
+            command = "mdx-language-server";
+            args = ["--stdio"];
+          };
           pest.command = "pest-language-server"; # TODO can i remove this?
           rust-analyzer.config = {
             check.command = "clippy";
@@ -229,6 +233,21 @@
             file-types = ["astro"];
             roots = ["package.json" "astro.config.mjs"];
             language-servers = ["astro"];
+            auto-format = true;
+            formatter = { command = "prettier"; args = ["--parser" "astro"]; };
+          }
+          {
+            name = "mdx";
+            language-servers = ["mdx" "ltex-ls"];
+            scope = "source.mdx";
+            block-comment-tokens = { start = "<!--"; end = "-->" ; };
+            indent = { tab-width = 2; unit = "  "; };
+            injection-regex = "mdx";
+            file-types = ["mdx"];
+            roots = [];
+            grammar = "markdown";
+            auto-format = true;
+            formatter = { command = "prettier"; args = ["--parser" "mdx"]; };
           }
           {
             name = "typst";
