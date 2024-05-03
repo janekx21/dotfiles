@@ -31,7 +31,10 @@ in
 		vimix-cursors
 	];
 
-	programs.rofi.package = pkgs.rofi-wayland;
+	programs.rofi = {
+		package = pkgs.rofi-wayland;
+		theme = "gruvbox-dark-hard";
+	};
 
 	# TODO move to blade
 	# gtk = {
