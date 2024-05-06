@@ -291,8 +291,8 @@
         grammar = [
           {
             name = "owl-ms";
-            # source = { git = "https://github.com/janekx21/tree-sitter-owl2-manchester-syntax", rev = "a55d6bdd3104cd64bfe7178395aa6a139b5632a9" }
-            source = { path = "/home/janek/Git/tree-sitter-owl2-manchester-syntax"; };
+            source = { git = "https://github.com/janekx21/tree-sitter-owl2-manchester-syntax"; rev = "a6e9be84affe8cd28b11c9cf103da4efcb047fa5"; };
+            # source = { path = "/home/janek/Git/tree-sitter-owl2-manchester-syntax"; };
           }
         ];
       };
