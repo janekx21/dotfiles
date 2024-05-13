@@ -39,6 +39,7 @@
 	    lg = "lazygit";
       ld = "lazydocker";
       dc = "docker-compose";
+      helix = "hx";
 	  };
 	};
 

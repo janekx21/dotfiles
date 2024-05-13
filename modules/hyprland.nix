@@ -140,9 +140,9 @@ in
 			windowrulev2 = [
 				"float,class:org.telegram.desktop,title:^(Telegram)$"
 				"float,class:Rambox"
-				"float,class:Godot"
-				"stayfocused,class:Godot"
-				"unset,class:Godot,title:^(.+)(Godot Engine)^(.+)"
+				# "float,class:Godot"
+				# "stayfocused,class:Godot"
+				# "unset,class:Godot,title:^(.+)(Godot Engine)^(.+)"
 				"tile,class:Godot,title:^(.+)(Godot Engine)^(.+)"
 			];
 
