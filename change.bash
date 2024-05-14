@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 cd "$(dirname "$0")"
 git pull
-$EDITOR ./flake.nix
+hx ./flake.nix
 git add .
 git commit -m "$(date)"
 if [[ $# -eq 0 ]]; then

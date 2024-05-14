@@ -36,6 +36,7 @@
       nwg-look
       pomodoro
       glow
+      networkmanager-openvpn
 
       godot_4
       discord
