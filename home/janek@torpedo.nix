@@ -63,6 +63,8 @@
       openssl
       wl-clipboard
       xclip
+
+      kdePackages.okular
       # teams
       # teams-for-linux
       # I know use teams inside of chromium. It works much better and has exelent pwa support.
