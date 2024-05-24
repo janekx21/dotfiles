@@ -15,6 +15,7 @@ in
     theme = "Gruvbox Dark Hard";
     settings = {
       background_opacity = "0.95";
+      background_blur = "16";
     };
   };
 }
