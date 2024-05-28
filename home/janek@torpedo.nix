@@ -72,6 +72,7 @@
       p7zip
       cpulimit
       clamtk
+      peek
 
 
       # IDE
