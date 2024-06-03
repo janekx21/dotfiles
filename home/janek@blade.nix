@@ -14,7 +14,7 @@
 	    nil
       jetbrains.jdk
       jetbrains.idea-ultimate
-      jetbrains.clion
+      # jetbrains.clion
       jetbrains.rider
       jetbrains.rust-rover
 	    nodePackages.vscode-langservers-extracted
