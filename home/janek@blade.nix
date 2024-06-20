@@ -237,11 +237,11 @@
             auto-format = true;
             formatter = { command = "prettier"; args = ["--parser" "astro"]; };
           }
+            # block-comment-tokens = { start = "<!--"; end = "-->" ; };
           {
             name = "mdx";
             language-servers = ["mdx" "ltex-ls"];
             scope = "source.mdx";
-            # block-comment-tokens = { start = "<!--"; end = "-->" ; };
             indent = { tab-width = 2; unit = "  "; };
             injection-regex = "mdx";
             file-types = ["mdx"];
@@ -267,16 +267,16 @@
             formatter = { command = "npx"; args = ["prettier" "--parser" "babel"]; };
             auto-format = true;
           }
-          {
-            name = "pest";
-            language-servers = [ "pest" ];
-            scope = "text.pest";
-            injection-regex = "pest";
-            file-types = ["pest"];
-            comment-token = "//";
-            indent = { tab-width = 4; unit = "    "; };
-            roots = [];
-          }
+          # {
+          #   name = "pest";
+          #   language-servers = [ "pest" ];
+          #   scope = "text.pest";
+          #   injection-regex = "pest";
+          #   file-types = ["pest"];
+          #   comment-token = "//";
+          #   indent = { tab-width = 4; unit = "    "; };
+          #   roots = [];
+          # }
           {
             name = "owl-ms";
             injection-regex = "owl-ms";
