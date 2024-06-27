@@ -43,6 +43,23 @@
 	  ];
 	};
 
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Orchis-Dark";
+      package = pkgs.orchis-theme;
+    };
+    # iconTheme = {
+    #   name = "Tela-dark";
+    #   package = pkgs.tela-icon-theme;
+    # };
+  };
+	xdg.configFile = {
+	  "gtk-4.0/assets".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/assets";
+	  "gtk-4.0/gtk.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk.css";
+	  "gtk-4.0/gtk-dark.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk-dark.css";
+	};
+
   wayland.windowManager.hyprland.settings = {
 	  monitor = [
   		"eDP-1,highres,0x1080,1.6 # buildin display"
