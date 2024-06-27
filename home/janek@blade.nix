@@ -49,10 +49,10 @@
       name = "Orchis-Dark";
       package = pkgs.orchis-theme;
     };
-    # iconTheme = {
-    #   name = "Tela-dark";
-    #   package = pkgs.tela-icon-theme;
-    # };
+    iconTheme = {
+      name = "Tela-dark";
+      package = pkgs.tela-icon-theme;
+    };
   };
 	xdg.configFile = {
 	  "gtk-4.0/assets".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/assets";
