@@ -82,6 +82,7 @@ in
 				# "XCURSOR_SIZE,24"
 				# "GDK_SCALE,2"
 				"NIXOS_OZONE_WL,1"
+				"GTK_THEME,${config.gtk.theme.name}"
 			];
 
       input = {
