@@ -62,6 +62,7 @@ in
     enable = true;
     package = lib.mkForce (lib.makeOverridable ({enableXWayland, enableNvidiaPatches}:
 			wrappWithNixGL {inherit pkgs; pkg = pkgs.hyprland;}) {enableXWayland = true; enableNvidiaPatches = false;});
+		systemd.enableXdgAutostart = true;
     settings = {
       # monitor = blade_moditor;
 			exec-once = [
