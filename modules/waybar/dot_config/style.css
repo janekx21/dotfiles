@@ -5,7 +5,7 @@
 }
 
 window#waybar {
-  background-color: transparent;
+  /*  background-color: transparent; */
   color: #ffffff;
   transition-property: background-color;
   transition-duration: .5s;
@@ -16,7 +16,7 @@ window#waybar.hidden {
 }
 
 window#waybar.empty {
-  background-color: transparent;
+  /*  background-color: transparent; */
 }
 
 /*
