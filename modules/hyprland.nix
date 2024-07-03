@@ -122,6 +122,16 @@ in
 				# shadow_scale = 0.99;
         shadow_offset = "0 1";
         "col.shadow" = "rgba(00000090)";
+
+				blur = {
+					size = 20;
+					passes = 2;
+					brightness = 1;
+	        noise = 0.01;
+	        contrast = 1;
+	        popups = true;
+	        popups_ignorealpha = 0.6;
+				};
       };
       animations = {
         enabled = true;
