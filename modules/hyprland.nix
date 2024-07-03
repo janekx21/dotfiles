@@ -80,8 +80,8 @@ in
 			};
 			env = [
 				"QT_QPA_PLATFORMTHEME,qt5ct"
-				# "XCURSOR_SIZE,24"
-				# "GDK_SCALE,2"
+				"XCURSOR_SIZE,24"
+				"GDK_SCALE,1.5"
 				"NIXOS_OZONE_WL,1"
 				"GTK_THEME,${config.gtk.theme.name}"
 			];
@@ -117,8 +117,9 @@ in
       decoration = {
         rounding = 12;
         drop_shadow = true;
-        shadow_range = 12;
+        shadow_range = 8;
         shadow_render_power = 2;
+				shadow_scale = 0.5;
         shadow_offset = "0 3";
         "col.shadow" = "rgba(00000070)";
       };
