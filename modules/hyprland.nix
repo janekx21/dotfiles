@@ -106,7 +106,11 @@ in
 			gestures.workspace_swipe = true;
 
 			# Style stuff
-			blurls = "waybar";
+			# blurls = "waybar";
+			layerrule = [
+				"blur, waybar"
+				"ignorezero, waybar"
+			];
       general = {
 		    gaps_in = 5;
 		    gaps_out = 12;
