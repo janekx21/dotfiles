@@ -108,7 +108,7 @@ in
 			# Style stuff
       general = {
 		    gaps_in = 5;
-		    gaps_out = 16;
+		    gaps_out = 12;
         border_size = 1;
         "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
@@ -117,10 +117,10 @@ in
       decoration = {
         rounding = 12;
         drop_shadow = true;
-        shadow_range = 16;
+        shadow_range = 12;
         shadow_render_power = 2;
-        shadow_offset = "0 5";
-        "col.shadow" = "rgba(00000044)";
+        shadow_offset = "0 3";
+        "col.shadow" = "rgba(00000070)";
       };
       animations = {
         enabled = true;
