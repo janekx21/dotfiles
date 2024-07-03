@@ -109,7 +109,7 @@ in
 			# blurls = "waybar";
 			layerrule = [
 				"blur, waybar"
-				"ignorezero, waybar"
+				"ignorealpha .3, waybar"
 			];
       general = {
 		    gaps_in = 5;
