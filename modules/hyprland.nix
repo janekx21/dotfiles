@@ -118,9 +118,9 @@ in
         rounding = 12;
         drop_shadow = true;
         shadow_range = 12;
-        shadow_render_power = 2;
+        shadow_render_power = 4;
 				# shadow_scale = 0.99;
-        shadow_offset = "0 1";
+        shadow_offset = "0 2";
         "col.shadow" = "rgba(00000080)";
       };
       animations = {
