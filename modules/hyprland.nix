@@ -109,7 +109,7 @@ in
       general = {
 		    gaps_in = 5;
 		    gaps_out = 18;
-        border_size = 2;
+        border_size = 1;
         "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
 		    layout = "dwindle";
@@ -118,9 +118,9 @@ in
         rounding = 12;
         drop_shadow = true;
         shadow_range = 6;
-        shadow_render_power = 2;
-        # shadow_offset = "0 5";
-        "col.shadow" = "rgba(1a1a1aee)";
+        shadow_render_power = 1;
+        shadow_offset = "0 5";
+        "col.shadow" = "rgba(00000088)";
       };
       animations = {
         enabled = true;
