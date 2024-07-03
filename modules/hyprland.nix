@@ -113,6 +113,8 @@ in
         "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
 		    layout = "dwindle";
+				resize_on_border = true;
+				allow_tearing = true;
       };
       decoration = {
         rounding = 12;
@@ -163,6 +165,7 @@ in
 			dwindle = {
 		    pseudotile = true; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
 		    preserve_split = true; # you probably want this
+				no_gaps_when_only = 1;
 			};
 			master.new_is_master = true;
 
