@@ -120,8 +120,8 @@ in
         shadow_range = 12;
         shadow_render_power = 4;
 				# shadow_scale = 0.99;
-        shadow_offset = "0 2";
-        "col.shadow" = "rgba(00000080)";
+        shadow_offset = "0 1";
+        "col.shadow" = "rgba(00000090)";
       };
       animations = {
         enabled = true;
