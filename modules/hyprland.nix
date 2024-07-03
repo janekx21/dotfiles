@@ -117,11 +117,11 @@ in
       decoration = {
         rounding = 12;
         drop_shadow = true;
-        shadow_range = 8;
-        shadow_render_power = 2;
-				shadow_scale = 0.5;
+        shadow_range = 4;
+        shadow_render_power = 3;
+				# shadow_scale = 0.5;
         shadow_offset = "0 3";
-        "col.shadow" = "rgba(00000070)";
+        "col.shadow" = "rgba(00000090)";
       };
       animations = {
         enabled = true;
