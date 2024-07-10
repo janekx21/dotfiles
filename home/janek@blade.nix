@@ -196,7 +196,7 @@
             command = "vls";
           };
           roc-language-server = {
-            command = "roc-language-server";
+            command = "roc_language_server";
           };
           omnisharp = {
             timeout = 10000;
