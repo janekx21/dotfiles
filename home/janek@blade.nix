@@ -195,6 +195,9 @@
           vls = {
             command = "vls";
           };
+          roc-language-server = {
+            command = "roc-language-server";
+          };
           omnisharp = {
             timeout = 10000;
           };
@@ -304,6 +307,16 @@
             comment-token = "//";
             indent = { tab-width = 4; unit = "    "; };
             grammar = "owl-ms"; # owl-ms default
+          }
+          {
+            name = "roc";
+            injection-regex = "roc";
+            scope = "text.roc";
+            file-types = ["roc"];
+            roots = [];
+            language-servers = ["roc-language-server"];
+            comment-token = "#";
+            indent = { tab-width = 4; unit = "    "; };
           }
         ];
         grammar = [
