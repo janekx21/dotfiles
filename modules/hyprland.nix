@@ -245,7 +245,8 @@ in
 				"$mod, PRINT, exec, hyprshot -m region"
 				"$mod SHIFT, S, exec, hyprshot -m region"
 				# Screenshot a monitor
-				", PRINT, exec, hyprshot -m output"
+				", PRINT, exec, hyprshot -m window"
+				"SHIFT, PRINT, exec, hyprshot -m region"
       ];
       bindm = [
         # Mouse movements
