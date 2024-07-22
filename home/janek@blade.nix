@@ -13,10 +13,11 @@
 	  packages = with pkgs; [
 	    nil
       jetbrains.jdk
-      jetbrains.idea-ultimate
+      # jetbrains.idea-ultimate
       # jetbrains.clion
-      # jetbrains.rider
-      jetbrains.rust-rover
+      jetbrains.webstorm
+      jetbrains.rider
+      # jetbrains.rust-rover
 	    nodePackages.vscode-langservers-extracted
       elmPackages.elm-language-server
 	    elmPackages.lamdera
