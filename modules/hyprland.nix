@@ -76,12 +76,12 @@ in
 				# "${pkgs.hypridle}/bin/hypridle"
 			];
 			xwayland = {
-				force_zero_scaling = true;
+				# force_zero_scaling = true;
 			};
 			env = [
 				"QT_QPA_PLATFORMTHEME,qt5ct"
-				"XCURSOR_SIZE,24"
-				"GDK_SCALE,1.5"
+				# "XCURSOR_SIZE,24"
+				# "GDK_SCALE,1.5"
 				"NIXOS_OZONE_WL,1"
 				"GTK_THEME,${config.gtk.theme.name}"
 			];
