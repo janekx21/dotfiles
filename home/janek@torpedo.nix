@@ -63,6 +63,7 @@
       openssl
       wl-clipboard
       xclip
+    	vimix-cursors
 
       kdePackages.okular
       # teams
