@@ -64,6 +64,7 @@
       wl-clipboard
       xclip
     	vimix-cursors
+      kdiff3
 
       kdePackages.okular
       # teams
