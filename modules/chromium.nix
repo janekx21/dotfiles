@@ -1,5 +1,4 @@
 { pkgs, lib, config, ... }:
-
 let
   wrappWithNixGL = import ../utils/wrapp-with-nix-gl.nix;
   commandLineArgs = [
