@@ -75,6 +75,7 @@
       cpulimit
       clamtk
       peek
+      hallmark
 
 
       # IDE
