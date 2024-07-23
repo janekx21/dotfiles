@@ -25,10 +25,10 @@
     };
   };
 
-  services.random-background = {
-    enable = true;
-    imageDirectory = "%h/Pictures/Backgrounds";
-  };
+  # services.random-background = {
+  #   enable = true;
+  #   imageDirectory = "%h/Pictures/Backgrounds";
+  # };
 
   wayland.windowManager.hyprland.settings = {
     monitor = [
