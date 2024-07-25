@@ -25,10 +25,10 @@
     };
   };
 
-  services.random-background = {
-    enable = true;
-    imageDirectory = "%h/Pictures/Backgrounds";
-  };
+  # services.random-background = {
+  #   enable = true;
+  #   imageDirectory = "%h/Pictures/Backgrounds";
+  # };
 
   wayland.windowManager.hyprland.settings = {
     monitor = [
@@ -63,12 +63,14 @@
       openssl
       wl-clipboard
       xclip
+    	vimix-cursors
+      kdiff3
 
       kdePackages.okular
       # teams
       # teams-for-linux
       # I know use teams inside of chromium. It works much better and has exelent pwa support.
-      minecraft
+      # minecraft
       p7zip
       cpulimit
       clamtk
