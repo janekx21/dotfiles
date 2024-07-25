@@ -16,7 +16,7 @@
       # jetbrains.idea-ultimate
       # jetbrains.clion
       jetbrains.webstorm
-      jetbrains.rider
+      # jetbrains.rider
       # jetbrains.rust-rover
 	    nodePackages.vscode-langservers-extracted
       elmPackages.elm-language-server
