@@ -193,7 +193,7 @@ in
 		    preserve_split = true; # you probably want this
 				no_gaps_when_only = 1;
 			};
-			master.new_is_master = true;
+			# master.new_is_master = true;
 
 			# Binds
 			"$mod" = "SUPER";
