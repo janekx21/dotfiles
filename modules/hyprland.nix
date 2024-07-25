@@ -59,11 +59,11 @@ in
 	# };
 
 	xdg.configFile = {
-		"electron-flags.conf".source = """
+		"electron-flags.conf".text = """
 			--enable-features=WaylandWindowDecorations
 			--ozone-platform-hint=auto
 		""";
-		"electron13-flags.conf".source = """
+		"electron13-flags.conf".text = """
 			--enable-features=UseOzonePlatform
 			--ozone-platform=wayland		
 		""";
