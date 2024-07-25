@@ -60,12 +60,12 @@ in
 
 	xdg.configFile = {
 		"electron-flags.conf".text = ''
-			--enable-features=WaylandWindowDecorations
-			--ozone-platform-hint=auto
+--enable-features=WaylandWindowDecorations
+--ozone-platform-hint=auto
 		'';
 		"electron13-flags.conf".text = ''
-			--enable-features=UseOzonePlatform
-			--ozone-platform=wayland		
+--enable-features=UseOzonePlatform
+--ozone-platform=wayland		
 		'';
 	};
 
