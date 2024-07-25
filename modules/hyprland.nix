@@ -58,6 +58,17 @@ in
 	#   "gtk-4.0/gtk-dark.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk-dark.css";
 	# };
 
+	xdg.configFile = {
+		"electron-flags.conf".source = """
+			--enable-features=WaylandWindowDecorations
+			--ozone-platform-hint=auto
+		""";
+		"electron13-flags.conf".source = """
+			--enable-features=UseOzonePlatform
+			--ozone-platform=wayland		
+		""";
+	};
+
   wayland.windowManager.hyprland = {
     enable = true;
     package = lib.mkForce (lib.makeOverridable ({enableXWayland, enableNvidiaPatches}:
