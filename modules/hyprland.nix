@@ -3,7 +3,6 @@ let
 	# waybar
 	# nwg-dock-hyprland
 	# kde-authentication
-	# Vimix-cursors
 	# wofi
 	# nautilus
 	# kitty
@@ -28,7 +27,7 @@ in
 	];
 
   home.packages = with pkgs; [
-		vimix-cursors
+		numix-cursor-theme
 	];
 
 	programs.rofi = {
@@ -81,7 +80,7 @@ in
 				"nwg-dock-hyprland -d"
 				"swww init"
 				"/usr/lib/polkit-kde-authentication-agent-1"
-				"hyprctl setcursor Vimix-cursors 24"
+				"hyprctl setcursor Numix-cursors 24"
 				# "xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2" # By default, the Nix package includes a patched wlroots that can render HiDPI XWayland windows.
 
 				# "${pkgs.hypridle}/bin/hypridle"
