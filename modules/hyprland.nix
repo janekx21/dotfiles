@@ -26,14 +26,22 @@ in
 		./waybar
 	];
 
-  home.packages = with pkgs; [
-		numix-cursor-theme
-	];
+  # home.packages = with pkgs; [
+		# numix-cursor-theme
+	# ];
 
 	programs.rofi = {
 		package = pkgs.rofi-wayland;
 		theme = "gruvbox-dark-hard";
 	};
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    # x11.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 16;
+  };
 
 	# TODO move to blade
 	# gtk = {
@@ -80,7 +88,7 @@ in
 				"nwg-dock-hyprland -d"
 				"swww init"
 				"/usr/lib/polkit-kde-authentication-agent-1"
-				"hyprctl setcursor Numix-cursors 24"
+				# "hyprctl setcursor Numix-cursors 24"
 				# "xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2" # By default, the Nix package includes a patched wlroots that can render HiDPI XWayland windows.
 
 				# "${pkgs.hypridle}/bin/hypridle"
