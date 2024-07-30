@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 cd "$(dirname "$0")"
 git pull || echo "git pull failed"
-hx ./flake.nix
+nix flake update
 git add .
 git commit -m "$(date)"
 if [[ $# -eq 0 ]]; then
