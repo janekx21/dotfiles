@@ -1,5 +1,6 @@
 {
   description = "Nix configs of Janek";
+
   nixConfig = {
     extra-substituters = [ "https://cache.nixos.org/" ];
     extra-trusted-public-keys =
