@@ -63,7 +63,6 @@
       openssl
       wl-clipboard
       xclip
-    	vimix-cursors
       kdiff3
 
       kdePackages.okular
@@ -215,11 +214,18 @@
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
     # EDITOR = "emacs";
-     BROWSER = "firefox";
+    BROWSER = "chromium";
+	  ELECTRON_OZONE_PLATFORM_HINT = "auto";
      # TERMINAL = "alacritty"; todo
   };
 
-  # comment
+  home.pointerCursor = {
+    gtk.enable = true;
+    # x11.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 24;
+  };
 
   # https://github.com/nix-community/home-manager/issues/1439
   xdg = {
