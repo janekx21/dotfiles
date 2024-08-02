@@ -13,7 +13,7 @@
 	  packages = with pkgs; [
 	    nil
       jetbrains.jdk
-      # jetbrains.idea-ultimate
+      jetbrains.idea-ultimate
       # jetbrains.clion
       jetbrains.webstorm
       # jetbrains.rider
