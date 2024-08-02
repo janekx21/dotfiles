@@ -31,7 +31,7 @@
       # etcher # unsecure :<
       eww
       hyprpicker
-      insync
+      # insync
       mattermost-desktop
       nwg-bar
       nwg-look
