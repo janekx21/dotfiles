@@ -104,7 +104,7 @@ in
 				"ELECTRON_OZONE_PLATFORM_HINT,auto"
 				"GDK_BACKEND,wayland,x11,"
 				"QT_QPA_PLATFORM,wayland;xcb"
-				"SDL_VIDEODRIVER,wayland"
+				# "SDL_VIDEODRIVER,wayland"
 				"CLUTTER_BACKEND,wayland"
 				"XDG_CURRENT_DESKTOP,Hyprland"
 				"XDG_SESSION_TYPE,wayland"
