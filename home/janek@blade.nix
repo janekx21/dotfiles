@@ -76,7 +76,12 @@
     nixvim = {
       enable = true;
       colorschemes.gruvbox.enable = true;
-      plugins.lightline.enable = true;
+      # plugins.lightline.enable = true;
+      plugins = {
+        lsp.enable = true;
+        treesitter.enable = true;
+        lazygit.enable = true;
+      };
     };
   
     git = {
