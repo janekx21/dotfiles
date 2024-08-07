@@ -78,7 +78,13 @@
       colorschemes.gruvbox.enable = true;
       # plugins.lightline.enable = true;
       plugins = {
-        lsp.enable = true;
+        lsp = {
+          enable = true;
+          servers = {
+            marksman.enable = true; # Markdown
+            nil-ls.enable = true; # Nix
+          };
+        };
         treesitter.enable = true;
         lazygit.enable = true;
       };
