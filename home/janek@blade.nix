@@ -83,6 +83,11 @@
           servers = {
             marksman.enable = true; # Markdown
             nil-ls.enable = true; # Nix
+            owl-ms-language-server = {
+              enable = true;
+              cmd = ["owl-ms-language-server"];
+              filetypes = ["omn"];
+            };
           };
         };
         treesitter.enable = true;
