@@ -273,7 +273,7 @@ in
 				", PRINT, exec, hyprshot -m window"
 				"SHIFT, PRINT, exec, hyprshot -m region"
 				"$mod, PRINT, exec, hyprshot -m active"
-				"$mod SHIFT, S, exec, hyprshot -m output"
+				"$mod SHIFT, S, exec, hyprshot -m output -m window"
       ];
       bindm = [
         # Mouse movements
