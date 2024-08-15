@@ -269,12 +269,11 @@ in
 				"$mod, mouse_down, workspace, e+1"
 				"$mod, mouse_up, workspace, e-1"
 
-				# Screenshot a region
-				"$mod, PRINT, exec, hyprshot -m region"
-				"$mod SHIFT, S, exec, hyprshot -m region"
-				# Screenshot a monitor
+				# Screenshot
 				", PRINT, exec, hyprshot -m window"
 				"SHIFT, PRINT, exec, hyprshot -m region"
+				"$mod, PRINT, exec, hyprshot -m active"
+				"$mod SHIFT, S, exec, hyprshot -m output"
       ];
       bindm = [
         # Mouse movements
