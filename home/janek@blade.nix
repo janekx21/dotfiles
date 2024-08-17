@@ -73,7 +73,7 @@
   };
 
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "hx";
     BROWSER = "chromium";
 	  ELECTRON_OZONE_PLATFORM_HINT = "auto";
      # TERMINAL = "alacritty"; todo
