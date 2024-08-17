@@ -5,6 +5,7 @@
     ../modules/zellij
     ../modules/hyprland.nix
     ../modules/chromium.nix
+    ../modules/jetbrains.nix
     ./common.nix
 		inputs.nixvim.homeManagerModules.nixvim
   ];
@@ -39,7 +40,7 @@
       glow
       networkmanager-openvpn
 
-      godot_4
+      # godot_4
       discord
 
   		numix-cursor-theme
