@@ -93,7 +93,7 @@
       nodePackages.vls
       nil
       omnisharp-roslyn
-      dotnet-sdk
+      dotnet-sdk_8
       docker-compose
       marksman
       # gnome.gnome-boxes
