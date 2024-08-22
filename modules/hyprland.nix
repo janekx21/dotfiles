@@ -98,7 +98,7 @@ in
 			};
 			env = [
 				"XCURSOR_SIZE,24"
-				"GDK_SCALE,1.5"
+				# "GDK_SCALE,1.5"
 				"NIXOS_OZONE_WL,1"
 				"GTK_THEME,${config.gtk.theme.name}"
 				"ELECTRON_OZONE_PLATFORM_HINT,auto"
