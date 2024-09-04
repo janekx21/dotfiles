@@ -332,9 +332,9 @@
     };
     languages = {
       language-server = {
-        vls = {
-          command = "vls";
-        };
+        # vls = {
+        #   command = "vls";
+        # };
         # vue-language-server = {
         #   command = "vue-language-server";
         # };
