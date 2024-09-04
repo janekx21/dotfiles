@@ -90,8 +90,9 @@
       plantuml-c4
       rustup
       netcoredbg
-      # nodePackages.vls
+      # nodePackages.vls replaced by official lsp
       vue-language-server
+      nodePackages.prettier
       nil
       omnisharp-roslyn
       dotnet-sdk_8
