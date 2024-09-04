@@ -335,12 +335,20 @@
         vls = {
           command = "vls";
         };
+        vue-language-server = {
+          command = "vue-language-server";
+        };
         omnisharp = {
           timeout = 10000;
         };
       };
+
       language = [
-        { name = "vue"; language-servers = ["vls"]; }
+        {
+          name = "vue";
+          language-servers = ["vue-language-server"];
+          formatter = { command = "prettier"; args = ["--parser" "vue"]; };
+        }
       ];
     };
     # languages = {
