@@ -91,7 +91,7 @@
       rustup
       netcoredbg
       # nodePackages.vls
-      nodePackages.vue-language-server
+      vue-language-server
       nil
       omnisharp-roslyn
       dotnet-sdk_8
