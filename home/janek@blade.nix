@@ -66,8 +66,8 @@
 
   wayland.windowManager.hyprland.settings = {
 	  monitor = [
-      "desc:Samsung Electric Company C24FG7x HTHKC02999,preferred,auto,auto"
-      "desc:BNQ BenQ RL2455 V9E01534SL0,preferred,auto-left,auto"
+      "desc:BNQ BenQ RL2455 V9E01534SL0,preferred,auto,auto"
+      "desc:Samsung Electric Company C24FG7x HTHKC02999,preferred,auto-right,auto"
   		"eDP-1,preferred,auto-down,1.6" # buildin display0x1080
   		# "DP-1,preferred,0x0,auto"
   		# "DP-3,preferred,1920x0,auto"
