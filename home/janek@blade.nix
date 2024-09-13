@@ -279,6 +279,11 @@
           };
           ltex-ls = {
             command = "/opt/ltex-ls-15.2.0/bin/ltex-ls"; # TODO replace with nix
+            config = {
+              ltex = {
+                language = "de-DE";
+              };
+            };
           };
           godot = {
             command = "nc";
