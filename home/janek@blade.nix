@@ -209,19 +209,29 @@
       settings = {
         theme = "gruvbox_dark_hard";
         editor = {
-          auto-save = true;
+          auto-save = {
+            focus-lost = true;
+            after-delay = {
+              enable = true;
+              timeout = 1000;
+            };
+          };
           auto-format = true;
           bufferline = "multiple";
           cursorline = true;
-          # color-modes = true;
+          color-modes = true; # color the mode idicator
+          popup-border = "all";
           cursor-shape = {
             insert = "bar";
             normal = "block";
             select = "block";
           };
 
-          lsp.display-messages = true;
-          lsp.display-inlay-hints = true;
+          lsp = {
+            goto-reference-include-declaration = false;
+            # display-messages = true;
+            display-inlay-hints = true;
+          };
 
           indent-guides = {
             render = true;
