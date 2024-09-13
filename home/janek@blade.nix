@@ -274,9 +274,7 @@
           owl-ms-language-server = {
             command = "/home/janek/Git/owl-ms-language-server/target/debug/owl-ms-language-server";
             config = {
-              ltex = {
-                language = "de-DE";
-              };
+              language = "de-DE";
             };
           };
           ltex-ls = {
