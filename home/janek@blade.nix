@@ -273,6 +273,11 @@
           };
           owl-ms-language-server = {
             command = "/home/janek/Git/owl-ms-language-server/target/debug/owl-ms-language-server";
+            config = {
+              ltex = {
+                language = "de-DE";
+              };
+            };
           };
           ltex-ls = {
             command = "/opt/ltex-ls-15.2.0/bin/ltex-ls"; # TODO replace with nix
