@@ -35,7 +35,7 @@
 	    change = "~/Git/dotfiles/change.bash";
       cd = "z";
 	    ".." = "z ..";
-	    ide = "zellij --layout=helix-ide";
+	    ide = "tmuxp load ide";
 	    lg = "lazygit";
       ld = "lazydocker";
       dc = "docker-compose";
