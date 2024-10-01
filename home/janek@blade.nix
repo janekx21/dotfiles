@@ -394,10 +394,10 @@
       enable = true;
       tmuxp.enable = true;
       plugins = with pkgs; [
+        tmuxPlugins.sensible
         tmuxPlugins.tmux-fzf
         # tmuxPlugins.pass
         # tmuxPlugins.fingers # Sieht ser cool aus
-        tmuxPlugins.sensible
         {
           plugin = tmuxPlugins.resurrect;
           extraConfig = "set -g @resurrect-strategy-nvim 'session'";
