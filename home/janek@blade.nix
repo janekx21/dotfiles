@@ -12,32 +12,30 @@
 
 	home = {
 	  packages = with pkgs; [
-	    nil
-      jetbrains.jdk
-      jetbrains.idea-ultimate
-      # jetbrains.clion
-      jetbrains.webstorm
-      # jetbrains.rider
-      # jetbrains.rust-rover
+      # Node
 	    nodePackages.vscode-langservers-extracted
+
+      # Elm
       elmPackages.elm-language-server
 	    elmPackages.lamdera
       elmPackages.elm-format
       elmPackages.elm
+
+      # C#
       omnisharp-roslyn
 
       discord
       discordo
       anki-bin
       # etcher # unsecure :<
-      eww
-      hyprpicker
+      # eww
+      # hyprpicker
       # insync
       mattermost-desktop
-      nwg-bar
-      nwg-look
+      # nwg-bar
+      # nwg-look
       pomodoro
-      glow
+      glow # markdown viewer
       networkmanager-openvpn
 
       # godot_4
@@ -47,22 +45,23 @@
 	  ];
 	};
 
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Orchis-Dark";
-      package = pkgs.orchis-theme;
-    };
-    iconTheme = {
-      name = "Tela-dark";
-      package = pkgs.tela-icon-theme;
-    };
-  };
-	xdg.configFile = {
-	  "gtk-4.0/assets".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/assets";
-	  "gtk-4.0/gtk.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk.css";
-	  "gtk-4.0/gtk-dark.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk-dark.css";
-	};
+ #  gtk = {
+ #    enable = true;
+ #    theme = {
+ #      name = "Orchis-Dark";
+ #      package = pkgs.orchis-theme;
+ #    };
+ #    iconTheme = {
+ #      name = "Tela-dark";
+ #      package = pkgs.tela-icon-theme;
+ #    };
+ #  };
+
+	# xdg.configFile = {
+	#   "gtk-4.0/assets".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/assets";
+	#   "gtk-4.0/gtk.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk.css";
+	#   "gtk-4.0/gtk-dark.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk-dark.css";
+	# };
 
   wayland.windowManager.hyprland.settings = {
 	  monitor = [
@@ -76,57 +75,11 @@
   };
 
   home.sessionVariables = {
-    EDITOR = "hx";
+    # EDITOR = "helix";
     BROWSER = "chromium";
 	  ELECTRON_OZONE_PLATFORM_HINT = "auto";
      # TERMINAL = "alacritty"; todo
   };
-
-	xdg.configFile.".ideavimrc".text = 
-  #idevimrc
-  ''
-    " General
-    set scrolloff=5
-    set linenumber
-    set showmode
-    set showcmd
-    set visualbell
-    set clipboard+=unnamed
-
-    " Search settings 
-    set ignorecase
-    set smartcase
-    set incsearch
-    set hlsearch
-
-    let mapleader = " "
-
-    " Plugins
-    set surround
-    set sneak
-    set nerdtree
-    set easymotion " Needs a intellij plugin AceJump and IdeaVim-EasyMotion
-    set notimeout
-    set which-key
-
-    " witch-key config
-    let g:WhichKeyDesc_display = "<leader>d Display options"
-
-    let g:WhichKeyDesc_zen_mode = "<leader>dz Toggle Zen mode"
-    let g:WhichKeyDesc_df_mode = "<leader>dd Toggle Distraction-Free mode"
-    let g:WhichKeyDesc_fullscreen = "<leader>df Toggle full screen"
-    " let g:WhichKeyDesc_<identifier> = "<keybinding> <helptext>"
-
-    " Key mapping
-    inoremap jk <Esc>
-
-    "" Tab navigation
-    nnoremap <leader>l :tabnext<CR>
-    nnoremap <leader>h :tabprev<CR>\
-
-    "" Comment lines
-    map <C-c> <action>(CommentByLineComment)
-  '';
 
   programs = {
     nixvim = {
@@ -417,10 +370,10 @@
       };
     };
 
-    rofi = {
-      enable = true;
-      pass.enable = true;
-    };
+    # rofi = {
+    #   enable = true;
+    #   pass.enable = true;
+    # };
 
     fzf = {
       enable = true;

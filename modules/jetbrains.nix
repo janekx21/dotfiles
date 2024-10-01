@@ -4,6 +4,9 @@
     jetbrains.jdk
     jetbrains.idea-ultimate
     jetbrains.webstorm
+    # jetbrains.clion
+    # jetbrains.rider
+    # jetbrains.rust-rover
 	];
 	
   xdg.configFile.".ideavimrc".text = 
