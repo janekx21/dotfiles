@@ -5,7 +5,7 @@
     jetbrains.idea-ultimate
     jetbrains.webstorm
     # jetbrains.clion
-    # jetbrains.rider
+    jetbrains.rider
     # jetbrains.rust-rover
 	];
 	
