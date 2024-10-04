@@ -15,7 +15,7 @@
     # conf
     ''
       # Set Programs to restore
-      set -g @resurrect-processes '"hx *" lg "helix *" lazygit joshuto lazydocker'
+      set -g @resurrect-processes '"~hx->hx *" lazygit joshuto lazydocker'
 
       # reload config file (change file location to your the tmux.conf you want to use)
       bind R source-file ~/.tmux.conf
