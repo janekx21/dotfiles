@@ -14,11 +14,11 @@
     extraConfig = 
     # conf
     ''
+      # reload config file (change file location to your the tmux.conf you want to use)
+      bind R source-file ~/.config/tmux/tmux.conf
+
       # Set Programs to restore
       set -g @resurrect-processes '"~hx->hx *" lazygit joshuto lazydocker'
-
-      # reload config file (change file location to your the tmux.conf you want to use)
-      bind R source-file ~/.tmux.conf
 
       # switch panes using Alt-arrow without prefix
       # bind -n M-Left select-pane -L
