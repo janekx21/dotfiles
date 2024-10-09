@@ -17,9 +17,6 @@
       # reload config file (change file location to your the tmux.conf you want to use)
       bind R source-file ~/.config/tmux/tmux.conf
 
-      # Set Programs to restore
-      set -g @resurrect-processes '"~hx->hx *" lazygit joshuto lazydocker'
-
       # switch panes using Alt-arrow without prefix
       # bind -n M-Left select-pane -L
       # bind -n M-Right select-pane -R
@@ -75,11 +72,19 @@
       # tmuxPlugins.fingers # Sieht ser cool aus
       {
         plugin = tmuxPlugins.resurrect;
-        extraConfig = "set -g @resurrect-strategy-nvim 'session'";
+        extraConfig = 
+        #const
+        ''
+          set -g @resurrect-strategy-nvim 'session'
+          # Set Programs to restore
+          set -g @resurrect-processes '"~hx->hx *" "~lazygit" "~joshuto" "~lazydocker"'
+        '';
       }
       {
         plugin = tmuxPlugins.continuum;
-        extraConfig = ''
+        extraConfig =
+        #conf
+        ''
           set -g @continuum-restore 'on'
           set -g @continuum-save-interval '10' # minutes
         '';
