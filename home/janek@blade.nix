@@ -245,7 +245,7 @@
             command = "/opt/ltex-ls-15.2.0/bin/ltex-ls"; # TODO replace with nix
             config = {
               ltex = {
-                language = "auto"; # de-DE
+                # language = "en-US"; # "auto"; # de-DE
               };
             };
           };
