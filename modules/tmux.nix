@@ -77,7 +77,7 @@
         ''
           set -g @resurrect-strategy-nvim 'session'
           # Set Programs to restore
-          set -g @resurrect-processes '"~hx->hx *" "~lazygit" "~joshuto" "~lazydocker"'
+          set -g @resurrect-processes '"~hx->hx *" "~lazygit" "~joshuto" "~lazydocker" "~dotnet watch->dotnet watch *"'
         '';
       }
       {
