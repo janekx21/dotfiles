@@ -1,14 +1,14 @@
 { inputs, config, pkgs, lib, ... }:
 let
-  tmux-which-key = pkgs.tmuxPlugins.mkTmuxPlugin
+  tmux-nerd-font-window-name = pkgs.tmuxPlugins.mkTmuxPlugin
     {
-      pluginName = "tmux-which-key";
-      version = "unstable-2024-10-19";
+      pluginName = "tmux-nerd-font-window-name";
+      version = "2.1.2";
       src = pkgs.fetchFromGitHub {
-        owner = "alexwforsythe";
-        repo = "tmux-which-key";
-        rev = "1f419775caf136a60aac8e3a269b51ad10b51eb6";
-        sha256 = "sha256-X7FunHrAexDgAlZfN+JOUJvXFZeyVj9yu6WRnxMEA8E=";
+        owner = "joshmedeski";
+        repo = "tmux-nerd-font-window-name";
+        rev = "2f5131f01b6cc052069211f6dce02c3fec564da2";
+        sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
       };
     };
 in
@@ -103,7 +103,7 @@ in
         '';
       }
       {
-        plugin = tmux-which-key;
+        plugin = tmux-nerd-font-window-name;
       }
     ];
   };
