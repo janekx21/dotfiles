@@ -102,9 +102,9 @@ in
           set -g @continuum-save-interval '10' # minutes
         '';
       }
-      {
-        plugin = tmux-nerd-font-window-name;
-      }
+      # { # returns 127
+        # plugin = tmux-nerd-font-window-name;
+      # }
     ];
   };
 }
