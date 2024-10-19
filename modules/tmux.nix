@@ -8,7 +8,7 @@ let
         owner = "alexwforsythe";
         repo = "tmux-which-key";
         rev = "1f419775caf136a60aac8e3a269b51ad10b51eb6";
-        sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+        sha256 = "sha256-X7FunHrAexDgAlZfN+JOUJvXFZeyVj9yu6WRnxMEA8E=";
       };
     };
 in
