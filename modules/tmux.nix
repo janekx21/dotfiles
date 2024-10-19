@@ -8,7 +8,7 @@ let
         owner = "joshmedeski";
         repo = "tmux-nerd-font-window-name";
         rev = "2f5131f01b6cc052069211f6dce02c3fec564da2";
-        sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+        sha256 = "sha256-bnlOAfdBv5Rg4z1hu1jtdx5oZ6kAZE40K4zqLxmyYQE=";
       };
     };
 in
