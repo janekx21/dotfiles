@@ -1,4 +1,17 @@
 { inputs, config, pkgs, lib, ... }:
+let
+  tmux-which-key = pkgs.tmuxPlugins.mkTmuxPlugin
+    {
+      pluginName = "tmux-which-key";
+      version = "unstable-2024-10-19";
+      src = pkgs.fetchFromGitHub {
+        owner = "alexwforsythe";
+        repo = "tmux-which-key";
+        rev = "1f419775caf136a60aac8e3a269b51ad10b51eb6";
+        sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+      };
+    };
+in
 {
   programs.tmux = {
     enable = true;
@@ -88,6 +101,9 @@
           set -g @continuum-restore 'on'
           set -g @continuum-save-interval '10' # minutes
         '';
+      }
+      {
+        plugin = tmux-which-key;
       }
     ];
   };
