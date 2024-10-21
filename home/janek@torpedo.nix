@@ -5,7 +5,7 @@
 # in
 {
   imports = [
-    ../modules/kitty.nix
+    # ../modules/kitty.nix
     ../modules/zellij
     # ../modules/hyprland.nix
     # ../modules/chromium.nix
@@ -45,7 +45,7 @@
       # nixgl.nixGLIntel
       
       # PC
-      alacritty
+      # alacritty
       zip
       gzip
       firefox
