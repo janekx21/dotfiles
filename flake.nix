@@ -41,7 +41,7 @@
       
       pkgs = import nixpkgs {
         inherit system;
-        overlays = [  helix.overlays.default zjstatusOverlay ]; #  nixgl.overlay DEBUG
+        overlays = [ nixgl.overlay helix.overlays.default zjstatusOverlay ]; #   DEBUG
   			config.allowUnfree = true;
         config.permittedInsecurePackages = [
           "electron-19.1.9"
