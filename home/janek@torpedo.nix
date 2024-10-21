@@ -85,7 +85,7 @@
       jetbrains.webstorm
       jetbrains.datagrip
       jetbrains.rust-rover
-      vscode
+      # vscode
       lazydocker
       joshuto
       plantuml-c4
