@@ -66,7 +66,7 @@
       xclip
       kdiff3
 
-      kdePackages.okular
+      # kdePackages.okular
       # kdePackages.spectacle
       # teams
       # teams-for-linux
