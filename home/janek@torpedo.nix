@@ -8,7 +8,7 @@
     ../modules/kitty.nix
     ../modules/zellij
     # ../modules/hyprland.nix
-    ../modules/chromium.nix
+    # ../modules/chromium.nix
     ../modules/waybar
     ../modules/tmux.nix
     ./common.nix
@@ -42,7 +42,7 @@
       # NIX
       cachix
       nix-tree
-      nixgl.nixGLIntel
+      # nixgl.nixGLIntel
       
       # PC
       alacritty
