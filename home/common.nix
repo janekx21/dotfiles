@@ -4,7 +4,7 @@
 # in
 {
   imports = [
-    ../modules/kitty.nix 
+    # ../modules/kitty.nix 
   ];
 
   nixpkgs.config.allowUnfree = true;
