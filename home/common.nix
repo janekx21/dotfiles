@@ -25,8 +25,8 @@
 
 	  packages = with pkgs; [
 	    cachix
-	    nixgl.nixGLIntel
-	    nixgl.nixVulkanIntel
+	    # nixgl.nixGLIntel
+	    # nixgl.nixVulkanIntel
 	    nil
 	  ];
 
