@@ -22,5 +22,7 @@ in
 		username = "janek";
 		hostname = "torpedo";
 	};
+
+	"janek@sonic" = mkHome { username = "janek"; hostname = "sonic"; };
 }
 
