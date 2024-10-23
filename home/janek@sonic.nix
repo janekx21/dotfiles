@@ -397,7 +397,7 @@
       }
     ];
     envExtra = ''
-      bindkey \"^[[3~\" delete-char
+      bindkey "^[[3~" delete-char
       export PATH="$PATH:/home/janek/.dotnet/tools"
     '';
   };
