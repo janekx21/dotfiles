@@ -14,8 +14,8 @@ in
     package = wrappWithNixGL {inherit pkgs; pkg = pkgs.kitty;};
     theme = "Gruvbox Dark Hard";
     settings = {
-      background_opacity = "0.90";
-      background_blur = "16";
+      # background_opacity = "0.90";
+      # background_blur = "16";
     };
   };
 }
