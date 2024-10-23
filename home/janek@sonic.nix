@@ -396,7 +396,10 @@
         file = "p10k.zsh";
       }
     ];
-    envExtra = "bindkey \"^[[3~\" delete-char";
+    envExtra = ''
+      bindkey \"^[[3~\" delete-char
+      export PATH="$PATH:/home/janek/.dotnet/tools"
+    '';
   };
 
   programs.nushell = {
