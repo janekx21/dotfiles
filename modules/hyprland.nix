@@ -44,19 +44,19 @@ in
   };
 
 	# TODO move to blade
-	# gtk = {
- #    enable = true;
- #    theme = {
- #      name = "Catppuccin-Macchiato-Compact-Pink-Dark";
- #      package = pkgs.catppuccin-gtk;
-	# 		# .override {
- #   #      accents = [ "green" ];
- #   #      size = "compact";
- #   #      tweaks = [ "rimless" "normal" ];
- #   #      variant = "frappe";
- #   #    };
- #    };
- #  };
+	gtk = {
+    enable = true;
+    theme = {
+      name = "Catppuccin-Macchiato-Compact-Pink-Dark";
+      package = pkgs.catppuccin-gtk;
+			# .override {
+   #      accents = [ "green" ];
+   #      size = "compact";
+   #      tweaks = [ "rimless" "normal" ];
+   #      variant = "frappe";
+   #    };
+    };
+  };
 
 	# Now symlink the `~/.config/gtk-4.0/` folder declaratively:
 	# xdg.configFile = {
