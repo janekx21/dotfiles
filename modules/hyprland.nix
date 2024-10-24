@@ -58,10 +58,10 @@ in
       package = pkgs.tela-icon-theme;
     };
   };
-	# qt = {
-		# enable = true;
-		# theme = 
-	# };
+	qt = {
+	  enable = true;
+	  platformTheme = "gtk";
+	};
 
 	# Now symlink the `~/.config/gtk-4.0/` folder declaratively:
 	# xdg.configFile = {
