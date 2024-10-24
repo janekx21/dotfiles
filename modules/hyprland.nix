@@ -97,6 +97,7 @@ in
 				# "xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2" # By default, the Nix package includes a patched wlroots that can render HiDPI XWayland windows.
 
 				# "${pkgs.hypridle}/bin/hypridle"
+				"dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
 			];
 			xwayland = {
 				force_zero_scaling = true;
