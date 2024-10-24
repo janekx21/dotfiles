@@ -27,8 +27,10 @@ in
 		./wofi.nix
 	];
 
-  # home.packages = with pkgs; [
-		# numix-cursor-theme
+ #  home.packages = with pkgs; [
+	# 	# numix-cursor-theme
+
+ #    kdePackages.dolphin
 	# ];
 
 	programs.rofi = {
@@ -210,7 +212,7 @@ in
         "$mod, Q, exec, ${config.programs.kitty.package}/bin/kitty"
         # "$mod, W, exec, ${config.programs.chromium.package}/bin/chromium --ozone-platform-hint=auto"
         "$mod, W, exec, chromium"
-        "$mod, E, exec, ${pkgs.gnome.nautilus}/bin/nautilus -w"
+        "$mod, E, exec, ${pkgs.kdePackages.dolphin}/bin/dolphin"
         # "$mod, X, exec, ${pkgs.rambox}/bin/rambox --no-sandbox"
 				"$mod, u, exec, ${config.programs.kitty.package}/bin/kitty ~/Git/dotfiles/change.bash"
         "$mod, R, exec, ${config.programs.wofi.package}/bin/wofi --show drun"

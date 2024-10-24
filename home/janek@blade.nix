@@ -42,7 +42,7 @@
       # godot_4
       discord
 
-  		numix-cursor-theme
+  		# numix-cursor-theme
 	  ];
 	};
 
