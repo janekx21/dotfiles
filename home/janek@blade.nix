@@ -3,7 +3,7 @@
   imports = [
     ../modules/kitty.nix
     ../modules/zellij
-    # ../modules/hyprland.nix
+    ../modules/hyprland.nix
     ../modules/chromium.nix
     ../modules/jetbrains.nix
     ../modules/tmux.nix
