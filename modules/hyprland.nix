@@ -213,7 +213,7 @@ in
         "$mod, E, exec, ${pkgs.gnome.nautilus}/bin/nautilus -w"
         # "$mod, X, exec, ${pkgs.rambox}/bin/rambox --no-sandbox"
 				"$mod, u, exec, ${config.programs.kitty.package}/bin/kitty ~/Git/dotfiles/change.bash"
-        "$mod, R, exec, ${config.programs.wofi.package}/bin/rofi --show drun"
+        "$mod, R, exec, ${config.programs.wofi.package}/bin/wofi --show drun"
 
 				# System Programs
 				"$mod SHIFT, L, exec, ${config.programs.swaylock.package}/bin/swaylock --daemonize --show-failed-attempts -color 000000"
