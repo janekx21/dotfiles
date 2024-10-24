@@ -24,7 +24,7 @@ in
 {
 	imports = [
 		./waybar
-		./wofi
+		./wofi.nix
 	];
 
   # home.packages = with pkgs; [
