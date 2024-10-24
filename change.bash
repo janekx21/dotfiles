@@ -8,9 +8,5 @@ git pull || echo "git pull failed"
 hx ./flake.nix
 git add .
 git commit -m "$(date)"
-if [[ $# -eq 0 ]]; then
-  home-manager --flake .#$(whoami)@$(hostname -s) switch -b backup-$RANDOM
-else
-  home-manager --flake .#$1 switch
-fi
+home-manager --flake .#$(whoami)@$(hostname -s) switch -b backup-$RANDOM -v
 git push || echo "git push failed"
