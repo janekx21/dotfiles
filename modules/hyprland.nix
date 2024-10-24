@@ -24,6 +24,7 @@ in
 {
 	imports = [
 		./waybar
+		./wofi
 	];
 
   # home.packages = with pkgs; [
@@ -198,7 +199,7 @@ in
 			dwindle = {
 		    pseudotile = true; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
 		    preserve_split = true; # you probably want this
-				no_gaps_when_only = 1;
+				# no_gaps_when_only = 1;
 			};
 			# master.new_is_master = true;
 
@@ -212,7 +213,7 @@ in
         "$mod, E, exec, ${pkgs.gnome.nautilus}/bin/nautilus -w"
         # "$mod, X, exec, ${pkgs.rambox}/bin/rambox --no-sandbox"
 				"$mod, u, exec, ${config.programs.kitty.package}/bin/kitty ~/Git/dotfiles/change.bash"
-        "$mod, R, exec, ${config.programs.rofi.package}/bin/rofi -show drun"
+        "$mod, R, exec, ${config.programs.wofi.package}/bin/rofi --show drun"
 
 				# System Programs
 				"$mod SHIFT, L, exec, ${config.programs.swaylock.package}/bin/swaylock --daemonize --show-failed-attempts -color 000000"
