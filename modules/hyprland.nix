@@ -50,16 +50,18 @@ in
 	gtk = {
     enable = true;
     theme = {
-      name = "Catppuccin-Macchiato-Compact-Pink-Dark";
-      package = pkgs.catppuccin-gtk;
-			# .override {
-   #      accents = [ "green" ];
-   #      size = "compact";
-   #      tweaks = [ "rimless" "normal" ];
-   #      variant = "frappe";
-   #    };
+      name = "Orchis-Dark";
+      package = pkgs.orchis-theme;
+    };
+    iconTheme = {
+      name = "Tela-dark";
+      package = pkgs.tela-icon-theme;
     };
   };
+	# qt = {
+		# enable = true;
+		# theme = 
+	# };
 
 	# Now symlink the `~/.config/gtk-4.0/` folder declaratively:
 	# xdg.configFile = {
