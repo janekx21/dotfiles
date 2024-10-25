@@ -216,7 +216,7 @@ in
         # "$mod, W, exec, ${config.programs.chromium.package}/bin/chromium --ozone-platform-hint=auto"
         "$mod, W, exec, chromium"
         "$mod, E, exec, ${pkgs.nemo}/bin/nemo"
-        "$mod, X, exec, hyprexpo:expo, toggle" # can be: toggle, off/disable or on/enable
+        "$mod, X, hyprexpo:expo, toggle" # can be: toggle, off/disable or on/enable
 				"$mod, u, exec, ${config.programs.kitty.package}/bin/kitty ~/Git/dotfiles/change.bash"
         "$mod, R, exec, ${config.programs.wofi.package}/bin/wofi --show drun"
 
