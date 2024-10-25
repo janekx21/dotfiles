@@ -221,7 +221,7 @@ in
         "$mod, R, exec, ${config.programs.wofi.package}/bin/wofi --show drun"
 
 				# System Programs
-				"$mod SHIFT, L, exec, ${config.programs.swaylock.package}/bin/swaylock --daemonize --show-failed-attempts -color 000000"
+				"$mod SHIFT, L, exec, ${config.programs.swaylock.package}/bin/swaylock --daemonize --show-failed-attempts --color 000000"
 
 				# System shortcuts
         "$mod, C, killactive,"

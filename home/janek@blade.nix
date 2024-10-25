@@ -42,7 +42,8 @@
       # godot_4
       discord
 
-  		# numix-cursor-theme
+      swayimg
+      wlogout
 	  ];
 	};
 
