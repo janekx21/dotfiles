@@ -314,6 +314,10 @@ in
 				disable_hyprland_logo = true;
 			};
     };
+
+		plugins = [
+			pkgs.hyprlandPlugins.hyprexpo
+		];
   };
 
 	# https://wiki.hyprland.org/Hypr-Ecosystem/hypridle/
