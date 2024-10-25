@@ -45,6 +45,7 @@
       swayimg
       wlogout
       zathura
+      swayimg
 	  ];
 	};
 
