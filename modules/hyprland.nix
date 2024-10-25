@@ -319,7 +319,7 @@ in
 	        columns = 3; # so i can see all workspaces
 	        gap_size = 24;
 	        bg_col = "rgb(1d2021)";
-	        workspace_method = "first current"; # [center/first] [workspace] e.g. first 1 or center m+1
+	        workspace_method = "first 1"; # [center/first] [workspace] e.g. first 1 or center m+1 # or center current
 	        enable_gesture = true; # laptop touchpad, 4 fingers
 	        gesture_distance = 250; # how far is the "max"
 	        gesture_positive = true; # positive = swipe down. Negative = swipe up.
