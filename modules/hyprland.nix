@@ -313,6 +313,18 @@ in
 			misc = {
 				disable_hyprland_logo = true;
 			};
+
+			plugin = {
+				hyprexpo = {
+	        columns = 2;
+	        gap_size = 16;
+	        bg_col = "rgb(1d2021)";
+	        workspace_method = "center current"; # [center/first] [workspace] e.g. first 1 or center m+1
+	        enable_gesture = true; # laptop touchpad, 4 fingers
+	        gesture_distance = 300; # how far is the "max"
+	        gesture_positive = true; # positive = swipe down. Negative = swipe up.
+				};
+			};
     };
 
 		plugins = [
