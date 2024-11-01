@@ -7,7 +7,7 @@ cd "$(dirname "$0")"
 git pull || echo "git pull failed"
 nix flake update
 git add .
-git commit -m "$(date)"
+git commit -m "$(date)" || echo "nothing to commit"
 if [[ $# -eq 0 ]]; then
   home-manager --flake .#$(whoami)@$(hostname -s) switch -b backup-$RANDOM
 else
