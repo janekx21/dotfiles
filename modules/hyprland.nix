@@ -198,6 +198,10 @@ in
 				# "stayfocused,class:Godot"
 				# "unset,class:Godot,title:^(.+)(Godot Engine)^(.+)"
 				"tile,class:Godot,title:^(.+)(Godot Engine)^(.+)"
+				"norounding, tag:original"
+				"noborder, tag:original"
+				"opaque, tag:original"
+				"forcergbx, tag:original"
 			];
 
 			# TODO what does this do again?
@@ -280,6 +284,9 @@ in
 				"SHIFT, PRINT, exec, hyprshot -m region"
 				"$mod, PRINT, exec, hyprshot -m active -m window"
 				"$mod SHIFT, S, exec, hyprshot -m output"
+
+				"$mod, O, tagwindow, original"
+
       ];
       bindm = [
         # Mouse movements
