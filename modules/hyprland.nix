@@ -328,7 +328,7 @@ in
     };
 
 		plugins = [
-			pkgs.hyprlandPlugins.hyprexpo
+			# pkgs.hyprlandPlugins.hyprexpo
 		];
   };
 
