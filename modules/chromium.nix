@@ -2,14 +2,14 @@
 let
   wrappWithNixGL = import ../utils/wrapp-with-nix-gl.nix;
   commandLineArgs = [
-    "--enable-features=TouchpadOverscrollHistoryNavigation"
+    # "--enable-features=TouchpadOverscrollHistoryNavigation"
     # "--enable-logging=stderr"
     # "--ignore-gpu-blocklist"      
-    "--ozone-platform=wayland"
-    "--use-vulkan"
-    "--enable-features=CanvasOopRasterization"
-    "--enable-gpu-rasterization"
-    "--enable-zero-copy"
+    # "--ozone-platform=wayland"
+    # "--use-vulkan"
+    # "--enable-features=CanvasOopRasterization"
+    # "--enable-gpu-rasterization"
+    # "--enable-zero-copy"
   ];
 in
 {
