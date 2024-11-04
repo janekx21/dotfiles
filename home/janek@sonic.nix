@@ -8,7 +8,7 @@
     # ../modules/kitty.nix
     ../modules/zellij
     # ../modules/hyprland.nix
-    # ../modules/chromium.nix
+    ../modules/chromium.nix
     ../modules/waybar
     ../modules/tmux.nix
     ./common.nix
