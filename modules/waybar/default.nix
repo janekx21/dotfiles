@@ -199,9 +199,9 @@
   },
   "custom/power": {
     "format": " ",
-    "on-click": "nwg-bar",
-    "on-click-right": "killall nwg-bar"
+    "on-click": "wlogout --show-binds",
   },
+    // "on-click-right": "killall nwg-bar"
   // "custom/layout": {
   //   "format": "",
   //   "on-click": "bash ~/.config/system_scripts/layout.sh"
