@@ -173,7 +173,6 @@ in
 					brightness = 1;
 	        noise = 0.02;
 	        contrast = 1;
-					vibrance = 0.3;
 	        popups = false;
 	        popups_ignorealpha = 0.6;
 				};
