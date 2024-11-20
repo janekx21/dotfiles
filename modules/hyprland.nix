@@ -157,20 +157,24 @@ in
       };
       decoration = {
         rounding = 12;
-        drop_shadow = true;
-        shadow_range = 12;
-        shadow_render_power = 4;
-				# shadow_scale = 0.99;
-        shadow_offset = "0 1";
-        "col.shadow" = "rgba(00000090)";
+
+				shadow = {
+					enabled = true;
+	        range = 12;
+	        render_power = 4;
+	        offset = "0 1";
+	        color = "rgba(00000090)";
+				};
 
 				blur = {
+					enabled = true;
 					size = 12;
 					passes = 2;
 					brightness = 1;
-	        noise = 0.01;
+	        noise = 0.02;
 	        contrast = 1;
-	        popups = true;
+					vibrance = 0.3;
+	        popups = false;
 	        popups_ignorealpha = 0.6;
 				};
       };
