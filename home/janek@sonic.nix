@@ -77,6 +77,7 @@
       clamtk
       peek
 
+      mariadb
 
       # IDE
       git
