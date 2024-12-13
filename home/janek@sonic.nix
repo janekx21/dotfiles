@@ -42,7 +42,7 @@
       # NIX
       cachix
       nix-tree
-      # nixgl.nixGLIntel
+      nixgl.nixGLIntel
       
       # PC
       # alacritty
