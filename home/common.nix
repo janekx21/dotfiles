@@ -32,7 +32,7 @@
 
 	  shellAliases = {
       ll = "ls -l";
-	    change = "~/Git/dotfiles/change.bash";
+	    hs = "~/Git/dotfiles/hs.bash";
       cd = "z";
 	    ".." = "z ..";
 	    ide = "tmuxp load ide";

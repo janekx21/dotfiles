@@ -16,26 +16,6 @@
     "electron-25.9.0"
   ];
 
-  # TODO systemd.user.services
-
-  # dconf.settings = {
-  #   "org.gnome.desktop.input-sources" = {
-  #     sources = [ (lib.hm.gvariant.mkTuple [ "xkb" "de+neo_qwertz" ]) ];
-  #   };
-  # };
-
-  # services.random-background = {
-  #   enable = true;
-  #   imageDirectory = "%h/Pictures/Backgrounds";
-  # };
-
-  # wayland.windowManager.hyprland.settings = {
-  #   monitor = [
-  #     "eDP-1,preferred,auto,1.333333"
-  #     ",preferred,auto,auto"
-  #   ];
-  # };
-
   home.packages = with pkgs; [
       # NIX
       cachix
@@ -43,10 +23,8 @@
       nixgl.nixGLIntel
       
       # PC
-      # alacritty
       zip
       gzip
-      # firefox
       blender
       gimp
       inkscape-with-extensions
@@ -54,43 +32,26 @@
       neofetch
       libreoffice
       obsidian
-      # kitty-img
-      # kitty-themes
       zsh-powerlevel10k
       htop
       nettools
       openssl
-      wl-clipboard
       xclip
       kdiff3
 
-      # kdePackages.okular
-      # kdePackages.spectacle
-      # teams
-      # teams-for-linux
-      # I know use teams inside of chromium. It works much better and has exelent pwa support.
-      # minecraft
       p7zip
       cpulimit
       clamtk
       peek
 
-      mariadb
-
       # IDE
       git
-      vtm
-      jetbrains.rider
-      jetbrains.webstorm
-      jetbrains.datagrip
-      jetbrains.rust-rover
-      # vscode
+      vtm # cool terminal multiplexer
       lazydocker
       joshuto
       plantuml-c4
       rustup
       netcoredbg
-      # nodePackages.vls replaced by official lsp
       vue-language-server
       nodePackages.prettier
       nil
@@ -98,41 +59,16 @@
       dotnet-sdk_8
       docker-compose
       marksman
-      # gnome.gnome-boxes
+      nodejs
 
       # FONTS
       roboto
       roboto-mono
       jetbrains-mono
 
-      # nodejs
-      # docker
-      # mesa-demos
-      # mesa
-      # glxinfo
-
-      # DESKTOP
-      # orchis-theme
-      # gnome.gnome-shell
-      # gnome-extension-manager
-      # gnome.gnome-shell-extensions
-      # gnome.gnome-tweaks
-      # gnome.gnome-clocks
-      # # gnome.gnome-control-center
-      # gnome.nautilus
-
-      # Versions do not line up :<
-      # gnomeExtensions.extension-list
-      # gnomeExtensions.just-perfection
-      # gnomeExtensions.panel-corners
-      # gnomeExtensions.blur-my-shell
-
-      # gnomeExtensions.thinkpad-thermal
-      # gnomeExtensions.thanatophobia
-      # gnomeExtensions.user-themes
-      
-      # Virtualization
+      # Virtualisation
       docker
+
       # VIRTUALBOX
       # linuxKernel.packages.linux_6_2.virtualbox
   ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
@@ -229,9 +165,6 @@
     };
     languages = {
       language-server = {
-        # vls = {
-        #   command = "vls";
-        # };
         # vue-language-server = {
         #   command = "vue-language-server";
         # };
