@@ -8,7 +8,7 @@ in
     enable = true;
     font = {
       size = 12;
-      name = "JetBrainsMonoNerdFont";
+      # name = "JetBrainsMonoNerdFont";
       package = pkgs.nerd-fonts.jetbrains-mono;
     };
     shellIntegration.enableZshIntegration = true;
