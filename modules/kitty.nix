@@ -8,7 +8,7 @@ in
     enable = true;
     font = {
       size = 12;
-      name = "JetBrainsMono Nerd Font"; # TODO use nix pkgs
+      name = "JetBrainsMono"; # TODO use nix pkgs
     };
     shellIntegration.enableZshIntegration = true;
     package = wrappWithNixGL {inherit pkgs; pkg = pkgs.kitty;};
