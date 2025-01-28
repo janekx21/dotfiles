@@ -8,8 +8,8 @@ in
     enable = true;
     font = {
       size = 12;
-      name = "JetBrainsMono Nerd Font";
-      package = pkgs.nerd-fonts.jetbrains-mono;
+      name = "Fira Code";
+      package = pkgs.fira-code;
     };
     shellIntegration.enableZshIntegration = true;
     package = wrappWithNixGL {inherit pkgs; pkg = pkgs.kitty;};
