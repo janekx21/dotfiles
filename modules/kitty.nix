@@ -8,8 +8,8 @@ in
     enable = true;
     font = {
       size = 12;
-      name = "Fira Code";
-      package = pkgs.fira-code;
+      name = "FiraCode Nerd Font"; # TODO make this a nerdfont again
+      package = pkgs.nerd-fonts.fira-code;
     };
     shellIntegration.enableZshIntegration = true;
     package = wrappWithNixGL {inherit pkgs; pkg = pkgs.kitty;};
