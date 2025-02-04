@@ -61,6 +61,10 @@ in
       marksman
       nodejs
 
+      elmPackages.elm
+      elmPackages.elm-language-server
+      elmPackages.elm-format
+
       # FONTS
       roboto
       roboto-mono
