@@ -1,6 +1,6 @@
 { pkgs, lib, config, ... }:
 let
-  wrappWithNixGL = import ../utils/wrapp-with-nix-gl.nix;
+  # wrappWithNixGL = import ../utils/wrapp-with-nix-gl.nix;
   commandLineArgs = [
     # "--enable-features=TouchpadOverscrollHistoryNavigation"
     # "--enable-logging=stderr"
@@ -16,7 +16,7 @@ in
   programs.chromium = {
     enable = true;
     # package = wrappWithNixGL pkgs pkgs.ungoogled-chromium;
-    package = wrappWithNixGL {inherit pkgs; pkg = pkgs.ungoogled-chromium;args = lib.concatStringsSep " " commandLineArgs;};
+    # package = wrappWithNixGL {inherit pkgs; pkg = pkgs.ungoogled-chromium;args = lib.concatStringsSep " " commandLineArgs;};
     # commandLineArgs = [
     #   "--enable-features=TouchpadOverscrollHistoryNavigation"
     #   "--enable-logging=stderr"

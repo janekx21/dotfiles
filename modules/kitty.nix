@@ -1,7 +1,7 @@
 { pkgs, lib, config, ... }:
 
 let
-  wrappWithNixGL = import ../utils/wrapp-with-nix-gl.nix;
+  # wrappWithNixGL = import ../utils/wrapp-with-nix-gl.nix;
 in
 {
   programs.kitty = {
@@ -12,7 +12,7 @@ in
       # package = pkgs.nerd-fonts.fira-code;
     };
     shellIntegration.enableZshIntegration = true;
-    package = wrappWithNixGL {inherit pkgs; pkg = pkgs.kitty;};
+    # package = wrappWithNixGL {inherit pkgs; pkg = pkgs.kitty;};
     themeFile = "GruvboxMaterialDarkHard";
     settings = {
       background_opacity = if config.wayland.windowManager.hyprland.enable then "0.90" else "1.00"; 

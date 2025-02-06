@@ -24,5 +24,6 @@ in
 	};
 
 	"janek@sonic" = mkHome { username = "janek"; hostname = "sonic"; };
+	"janek@nixos" = mkHome { username = "janek"; hostname = "nixos"; };
 }
 
