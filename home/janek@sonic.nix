@@ -79,7 +79,7 @@ in
       docker
 
       nerdfonts
-  ]
+  ];
   # ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
   home.sessionVariables = {
