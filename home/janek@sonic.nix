@@ -41,6 +41,8 @@ in
       openssl
       xclip
       kdiff3
+      shutter
+      spectacle
 
       p7zip
       cpulimit
