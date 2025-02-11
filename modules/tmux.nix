@@ -84,7 +84,14 @@ in
       # tmuxPlugins.pass
       # tmuxPlugins.fingers # Sieht ser cool aus
       {
-        plugin = tmuxPlugins.resurrect;
+        plugin = (tmuxPlugins.resurrect.overrideAttrs (oldAttrs: {
+          preFixup = (oldAttrs.preFixup or "") + ''
+            rm $out/share/tmux-plugins/resurrect/run_tests
+            rm $out/share/tmux-plugins/resurrect/tests/run_tests_in_isolation
+            rm $out/share/tmux-plugins/resurrect/tests/helpers/helpers.sh
+            # clean up other dangling symlinks here...
+          '';
+        }));
         extraConfig = 
         #const
         ''
