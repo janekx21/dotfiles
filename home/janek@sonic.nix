@@ -16,6 +16,8 @@ in
     "electron-25.9.0"
   ];
 
+  services.home-manager.autoUpgrade.enable = true;
+
   home.packages = with pkgs; [
       # NIX
       cachix
@@ -72,32 +74,12 @@ in
 
       # Virtualisation
       docker
-
-      # VIRTUALBOX
-      # linuxKernel.packages.linux_6_2.virtualbox
   ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
-
-
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
-  home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-  };
 
   home.sessionVariables = {
     BROWSER = "chromium";
 	  ELECTRON_OZONE_PLATFORM_HINT = "auto";
   };
-
 
   programs.zoxide.enable = true;
   programs.fzf.enable = true;
