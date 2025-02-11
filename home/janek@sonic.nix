@@ -17,6 +17,7 @@ in
   ];
 
   services.home-manager.autoUpgrade.enable = true;
+  services.home-manager.autoUpgrade.frequency = "weekly";
 
   home.packages = with pkgs; [
       # NIX
