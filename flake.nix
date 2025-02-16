@@ -53,26 +53,20 @@
       };
 
       nixosConfigurations = {
-        "nixos" = nixpkgs.lib.nixosSystem {
+        "blanc" = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ./configuration.nix
+            ./hosts/blanc/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.backupFileExtension = "backup";
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               # TODO rework
-              home-manager.users.janek = import (./home + "/janek@nixos.nix");
+              home-manager.users.janek = import (./home + "/janek@blanc.nix");
               home-manager.extraSpecialArgs = {
                 inherit inputs;
               };
-
-              # import ./home {
-                      # inherit inputs pkgs home-manager;
-                    # };
-              # Optionally, use home-manager.extraSpecialArgs to pass
-              # arguments to home.nix
             }
           ];
         };

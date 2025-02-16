@@ -12,7 +12,7 @@
 
 	home = {
 	  packages = with pkgs; [
-      blender
+      # blender
       cpu-x
       filelight
       htop
@@ -22,22 +22,22 @@
       steam
       telegram-desktop
       qtpass
-      gimp
+      # gimp
       haruna
       vscode-fhs
       wl-clipboard # for helix
 
       # Libreoffice
-      libreoffice-qt
-      hunspell
-      hunspellDicts.de_DE
-      hunspellDicts.en_US
+      # libreoffice-qt
+      # hunspell
+      # hunspellDicts.de_DE
+      # hunspellDicts.en_US
 
       
       # Games
       unityhub
-      jetbrains.rider
-      dotnet-sdk
+      # jetbrains.rider
+      # dotnet-sdk
       godot_4
 
       inconsolata
@@ -45,6 +45,8 @@
       vscode-langservers-extracted
     ];
   };
+
+  
  #      # Node
 	#     nodePackages.vscode-langservers-extracted
 
