@@ -43,6 +43,8 @@
       inconsolata
 
       vscode-langservers-extracted
+
+      obsidian
     ];
   };
 
@@ -304,7 +306,7 @@
           };
           typst-lsp.command = "typst-lsp";
           astro = {
-            command = "astro-ls";
+            command = "${pkgs.astro-language-server}/bin/astro-ls";
             args = ["--stdio"];
             config = {
               typescript = { 

@@ -51,14 +51,14 @@
       };
 
       nixosConfigurations = {
-        "nixos" = nixpkgs.lib.nixosSystem {
+        "blanc" = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             ./hosts/blanc/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.backupFileExtension = "backup";
-              home-manager.useGlobalPkgs = true;
+              # home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               # TODO rework
               home-manager.users.janek = import (./home + "/janek@blanc.nix");
