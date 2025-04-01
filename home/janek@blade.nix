@@ -1,51 +1,51 @@
 { inputs, config, pkgs, lib, ... }:
 {
   imports = [
-    ../modules/kitty.nix
-    ../modules/zellij
-    ../modules/hyprland.nix
+  #   ../modules/kitty.nix
+  #   ../modules/zellij
+  #   ../modules/hyprland.nix
     ../modules/chromium.nix
-    ../modules/jetbrains.nix
+  #   ../modules/jetbrains.nix
     ../modules/tmux.nix
     ./common.nix
-		inputs.nixvim.homeManagerModules.nixvim
+		# inputs.nixvim.homeManagerModules.nixvim
   ];
 
 	home = {
 	  packages = with pkgs; [
-      # Node
-	    nodePackages.vscode-langservers-extracted
+     #  # Node
+	    # nodePackages.vscode-langservers-extracted
 
-      # Elm
-      elmPackages.elm-language-server
-	    elmPackages.lamdera
-      elmPackages.elm-format
-      elmPackages.elm
+     #  # Elm
+     #  elmPackages.elm-language-server
+	    # elmPackages.lamdera
+     #  elmPackages.elm-format
+     #  elmPackages.elm
 
-      # C#
-      omnisharp-roslyn
+     #  # C#
+     #  omnisharp-roslyn
 
-      discord
-      discordo
-      anki-bin
-      # etcher # unsecure :<
-      # eww
-      # hyprpicker
-      # insync
-      mattermost-desktop
-      # nwg-bar
-      # nwg-look
-      pomodoro
-      glow # markdown viewer
-      networkmanager-openvpn
+     #  discord
+     #  discordo
+     #  anki-bin
+     #  # etcher # unsecure :<
+     #  # eww
+     #  # hyprpicker
+     #  # insync
+     #  mattermost-desktop
+     #  # nwg-bar
+     #  # nwg-look
+     #  pomodoro
+     #  glow # markdown viewer
+     #  networkmanager-openvpn
 
-      # godot_4
-      discord
+     #  # godot_4
+     #  discord
 
-      swayimg
-      wlogout
-      zathura
-      swayimg
+     #  swayimg
+     #  wlogout
+     #  zathura
+     #  swayimg
 	  ];
 	};
 
@@ -67,16 +67,16 @@
 	#   "gtk-4.0/gtk-dark.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk-dark.css";
 	# };
 
-  wayland.windowManager.hyprland.settings = {
-	  monitor = [
-  		"eDP-1,preferred,auto,1.6" # buildin display0x1080
-      "desc:BNQ BenQ RL2455 V9E01534SL0,preferred,auto-right,auto,transform,1"
-      "desc:Samsung Electric Company C24FG7x HTHKC02999,preferred,auto-right,auto"
-  		# "DP-1,preferred,0x0,auto"
-  		# "DP-3,preferred,1920x0,auto"
-  		",preferred,auto,auto"
-  	];
-  };
+  # wayland.windowManager.hyprland.settings = {
+	 #  monitor = [
+  # 		"eDP-1,preferred,auto,1.6" # buildin display0x1080
+  #     "desc:BNQ BenQ RL2455 V9E01534SL0,preferred,auto-right,auto,transform,1"
+  #     "desc:Samsung Electric Company C24FG7x HTHKC02999,preferred,auto-right,auto"
+  # 		# "DP-1,preferred,0x0,auto"
+  # 		# "DP-3,preferred,1920x0,auto"
+  # 		",preferred,auto,auto"
+  # 	];
+  # };
 
   home.sessionVariables = {
     # EDITOR = "helix";
@@ -86,22 +86,22 @@
   };
 
   programs = {
-    nixvim = {
-      enable = true;
-      colorschemes.gruvbox.enable = true;
-      # plugins.lightline.enable = true;
-      plugins = {
-        lsp = {
-          enable = true;
-          servers = {
-            marksman.enable = true; # Markdown
-            nil-ls.enable = true; # Nix
-          };
-        };
-        treesitter.enable = true;
-        lazygit.enable = true;
-      };
-    };
+    # nixvim = {
+    #   enable = true;
+    #   colorschemes.gruvbox.enable = true;
+    #   # plugins.lightline.enable = true;
+    #   plugins = {
+    #     lsp = {
+    #       enable = true;
+    #       servers = {
+    #         marksman.enable = true; # Markdown
+    #         nil-ls.enable = true; # Nix
+    #       };
+    #     };
+    #     treesitter.enable = true;
+    #     lazygit.enable = true;
+    #   };
+    # };
   
     git = {
       enable = true;
@@ -149,10 +149,10 @@
       '';
     };
 
-    nushell = {
-      enable = true;
-      extraLogin = ''bindkey "^[[3~" delete-char'';
-    };
+    # nushell = {
+    #   enable = true;
+    #   extraLogin = ''bindkey "^[[3~" delete-char'';
+    # };
 
     zoxide = {
       enable = true;

@@ -69,5 +69,24 @@
           ];
         };
       };
+
+      nixosConfigurations.blade = nixpkgs.lib.nixosSystem {
+        modules = [ ./hosts/blade/configuration.nix
+
+        home-manager.nixosModules.home-manager
+          {
+            # home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.janek = import (./home + "/janek@blade.nix");
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+            };
+
+            # Optionally, use home-manager.extraSpecialArgs to pass
+            # arguments to home.nix
+          }
+        ];
+
+      };
     };
 }
