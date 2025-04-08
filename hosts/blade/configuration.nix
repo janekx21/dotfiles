@@ -23,6 +23,27 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
+  services.hardware.openrgb.enable = true;
+
+  users.defaultUserShell = pkgs.zsh;
+  programs.zsh.enable = true;
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  services.blueman.enable = true;
+  hardware.enableAllFirmware = true;
+
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -86,7 +107,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.janek = {
     isNormalUser = true;
-    description = "Janek Winkler";
+    description = "Janek";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       kdePackages.kate
@@ -99,13 +120,36 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.nvidia.acceptLicense = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
+    helix
+    vim
+    openrgb-with-all-plugins
+
+
+    # Wine
+    # # support both 32-bit and 64-bit applications
+    # wineWowPackages.stable
+    # # support 32-bit only
+    # wine
+    # # support 64-bit only
+    # (wine.override { wineBuild = "wine64"; })
+    # # support 64-bit only
+    # wine64
+    # # wine-staging (version with experimental features)
+    # wineWowPackages.staging
+    # # winetricks (all versions)
+    # winetricks
+    # # native wayland support (unstable)
+    wineWowPackages.waylandFull
   ];
+
+  # programs.steam.protontricks.enable = true; # Maybe this is better for games
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -118,7 +162,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -132,6 +176,15 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "24.05"; # Did you read the comment?
 
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+    # Optional: GUI credentials (can be set in the browser instead if you don't want plaintext credentials in your configuration.nix file)
+    # settings.gui = {
+    #   user = "myuser";
+    #   password = "mypassword";
+    # };
+  };
 }

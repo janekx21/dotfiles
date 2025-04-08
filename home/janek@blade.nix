@@ -1,7 +1,7 @@
 { inputs, config, pkgs, lib, ... }:
 {
   imports = [
-  #   ../modules/kitty.nix
+    ../modules/kitty.nix
   #   ../modules/zellij
   #   ../modules/hyprland.nix
     ../modules/chromium.nix
@@ -13,6 +13,18 @@
 
 	home = {
 	  packages = with pkgs; [
+      godot_4
+      obsidian
+      vscode-langservers-extracted
+      htop
+      rustup
+      steam
+      telegram-desktop
+      qtpass
+      vscode-fhs
+      wl-clipboard # for helix
+      filelight
+      unityhub
      #  # Node
 	    # nodePackages.vscode-langservers-extracted
 
@@ -48,6 +60,10 @@
      #  swayimg
 	  ];
 	};
+  services.gpg-agent = {
+    enable = true;
+    pinentryPackage = pkgs.pinentry-gtk2;
+  };
 
  #  gtk = {
  #    enable = true;
@@ -86,6 +102,12 @@
   };
 
   programs = {
+
+    gpg = {
+      enable = true;
+      # pinentryFlavor = "gnome3";
+      # enableSSHSupport = true;
+    };
     # nixvim = {
     #   enable = true;
     #   colorschemes.gruvbox.enable = true;
@@ -240,9 +262,6 @@
           };
           owl-ms-language-server = {
             command = "/home/janek/Git/owl-ms-language-server/target/debug/owl-ms-language-server";
-            config = {
-              language = "de-DE";
-            };
           };
           ltex-ls = {
             command = "/opt/ltex-ls-15.2.0/bin/ltex-ls"; # TODO replace with nix
