@@ -1,4 +1,8 @@
-{ inputs, config, pkgs, lib, ... }:
+{ inputs, config, pkgs, lib, system, ... }:
+
+let
+  pkgsUnstable = import inputs.nixpkgs-unstable { inherit system; };
+in
 {
   imports = [
     ../modules/kitty.nix
@@ -13,7 +17,7 @@
 
 	home = {
 	  packages = with pkgs; [
-      godot_4
+      # godot_4
       obsidian
       vscode-langservers-extracted
       htop
@@ -25,6 +29,19 @@
       wl-clipboard # for helix
       filelight
       unityhub
+
+      blender
+
+      gimp
+      krita
+
+      zoom
+
+
+      jetbrains.pycharm-community-bin
+
+      
+
      #  # Node
 	    # nodePackages.vscode-langservers-extracted
 
@@ -58,12 +75,57 @@
      #  wlogout
      #  zathura
      #  swayimg
-	  ];
+	  ] ++ [pkgsUnstable.godot_4];
 	};
+
   services.gpg-agent = {
     enable = true;
     pinentryPackage = pkgs.pinentry-gtk2;
   };
+
+
+  # programs.mbsync.enable = true;
+  # programs.msmtp.enable = true;
+  # programs.notmuch = {
+  #   enable = true;
+  #   hooks = {
+  #     preNew = "mbsync --all";
+  #   };
+  # };
+  # programs.neomutt = {
+  #   enable = true;
+  #   sidebar.enable = true;
+  #   vimKeys = true;
+  # };
+
+  # accounts.email.accounts = {
+  #   "******************" = {
+  #     primary = true;
+  #     address = "******************";
+  #     userName = "******************";
+  #     realName = "*************";
+  #     imap.host = "imap.gmail.com";
+  #     smtp.host = "smtp.gmail.com";
+  #     passwordCommand = "echo TODO";
+    
+  #     mbsync = {
+  #       enable = true;
+  #       create = "maildir";
+  #     };
+  #     notmuch.enable = true;
+  #     notmuch.neomutt.enable = true;
+  #     msmtp.enable = true;
+  #     neomutt = {
+  #       enable = true;
+  #       extraConfig = ''
+  #         color status cyan default
+  #       '';
+  #     };
+  #   };
+  # };
+
+  # programs.password-store.enable = true;
+
 
  #  gtk = {
  #    enable = true;

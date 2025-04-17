@@ -6,6 +6,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -29,7 +30,7 @@
     };
   };
 
-  outputs = inputs @ { nixpkgs, home-manager, nixgl, helix, zjstatus, ... }:
+  outputs = inputs @ { nixpkgs, nixpkgs-unstable, home-manager, nixgl, helix, zjstatus, ... }:
     let
       system = "x86_64-linux";
 
@@ -45,6 +46,8 @@
           "electron-19.1.9"
         ];
       };
+
+      pkgsUnstable = import nixpkgs-unstable { inherit system; };
     in {
       homeConfigurations = import ./home {
         inherit inputs pkgs home-manager;
@@ -80,6 +83,7 @@
             home-manager.users.janek = import (./home + "/janek@blade.nix");
             home-manager.extraSpecialArgs = {
               inherit inputs;
+              inherit system;
             };
 
             # Optionally, use home-manager.extraSpecialArgs to pass
